@@ -7,6 +7,7 @@ import Hero from './Hero'
 import Stats from './Stats'
 import FeedbackCard from './FeedbackCard'
 import CTA from './CTA'
+import Login from './Login'
 
 
 export {
@@ -19,4 +20,5 @@ export {
     Stats,
     FeedbackCard,
     CTA,
+    Login,
 };

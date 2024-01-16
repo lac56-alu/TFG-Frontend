@@ -1,5 +1,4 @@
 import {useState, userState } from 'react'
-
 import { close, logoElement2, menu } from '../assets';
 import {navLinks} from '../constants'
 
@@ -17,7 +16,7 @@ const Navbar = () => {
             key={nav.id}
             className={`font-poppins font-normal cursor-pointer text-[16px] 
                         ${index === navLinks.legth - 1 ? 'mr-0' : 'mr-10'} text-white hover:text-secondary`}>
-              <a href={`#&{nav.id}`}> {nav.title} </a>
+              <a href={nav.href}> {nav.title} </a>
 
             </li>
         ))}
@@ -35,7 +34,7 @@ const Navbar = () => {
                 key={nav.id}
                 className={`font-poppins font-normal cursor-pointer text-[16px] 
                             ${index === navLinks.legth - 1 ? 'mr-0' : 'mb-4'} text-white`}>
-                  <a href={`#&{nav.id}`}> {nav.title} </a>
+                  <a href={nav.href} key={nav.key}> {nav.title} </a>
 
                 </li>
             ))}

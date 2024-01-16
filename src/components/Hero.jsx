@@ -7,7 +7,7 @@ const Hero = () => (
       <div className='flex flex-row items-center py-[6px] px-4 bg-discount-gradient rounded-[10px] mb-2'>
         <p className={`${styles.paragraph} text-white`}>
           <span className='text-white'>
-            👋🏼 Bienvenido a Element!
+            👋🏼 ¡Bienvenido a Element!
           </span>
         </p>
       </div>
