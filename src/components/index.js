@@ -8,6 +8,7 @@ import Stats from './Stats'
 import FeedbackCard from './FeedbackCard'
 import CTA from './CTA'
 import Login from './Login'
+import Register from './Register'
 
 
 export {
@@ -21,4 +22,5 @@ export {
     FeedbackCard,
     CTA,
     Login,
+    Register,
 };

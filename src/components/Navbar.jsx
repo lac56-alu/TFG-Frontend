@@ -35,7 +35,6 @@ const Navbar = () => {
                 className={`font-poppins font-normal cursor-pointer text-[35px] 
                             ${index === navLinks.legth - 1 ? 'mr-0' : 'mb-4'} text-white mt-6`}>
                   <a href={nav.href} key={nav.key}> {nav.title} </a>
-
                 </li>
             ))}
           </ul>
