@@ -1,6 +1,6 @@
-import styles from '../style'
-import Navbar from './Navbar'
-import Footer from './Footer'
+import styles from '../../style'
+import Navbar from '../Navbar'
+import Footer from '../Footer'
 
 function Register() {
   return (

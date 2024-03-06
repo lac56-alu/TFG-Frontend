@@ -8,8 +8,7 @@ import Stats from './Stats'
 import FeedbackCard from './FeedbackCard'
 import CTA from './CTA'
 import Login from './Login/Login'
-import Register from './Register'
-
+import Register from './Register/Register'
 
 export {
     Navbar,

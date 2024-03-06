@@ -3,6 +3,8 @@ import styles from '../../style'
 import Navbar from '../Navbar'
 import Footer from '../Footer'
 import Validation from './LoginValidation'
+import axios from 'axios'
+import swal from 'sweetalert2'
 
 function Login() {
   const [values, setValues] = useState({
@@ -16,10 +18,49 @@ function Login() {
     setValues(prev => ({...prev, [event.target.name]: [event.target.value]}))
   }
 
+  /*const handleSubmit = (event) => {
+    event.preventDefault();
+    const validationErrors = Validation(values);
+    setErrors(validationErrors);
+
+    if(errors.email === "" && errors.password === "" ){
+      const response = await axios.post('http://localhost:8082/tfg/login', {
+        email: values.email,
+        password: values.password
+      });
+      
+      console.log(response)
+    }
+  }*/
   const handleSubmit = (event) => {
     event.preventDefault();
     const validationErrors = Validation(values);
     setErrors(validationErrors);
+  
+    if (validationErrors.email === "" && validationErrors.password === "") {
+      (async () => {
+        try {
+          const response = await axios.post('http://localhost:8082/tfg/login', {
+            email: values.email,
+            password: values.password
+          });
+  
+          // Manejar la respuesta de la API aquí
+          swal.fire({
+            icon: 'success',
+            title: response.data.token
+          });
+          console.log('Respuesta de la API:', response.data.token);
+        } catch (error) {
+          // Manejar errores de la solicitud
+          swal.fire({
+            icon: 'error',
+            title: error.response.data.errorMessage
+          });
+          console.error('Error de la API:', error.response.data.errorMessage);
+        }
+      })();
+    }
   }
 
 
@@ -40,7 +81,7 @@ function Login() {
         </div>
 
         <form action="" onSubmit={handleSubmit}
-          className='mt-10 flex-1 sm:mx-5'>
+          className='mt-10 flex-1 sm:mx-5 items-center justify-end'>
           <div className='flex flex-1 flex-row items-center'>
             <h2 className="font-medium text-[22px] font-poppins text-white">
               Email
@@ -61,18 +102,11 @@ function Login() {
             </h2>
           </div>
           <div className='flex flex-1 flex-row items-center'>
-            {/*
-            <label className="font-medium text-[18px] font-poppins text-white">
-              Contraseña 
-            </label>
-            */}
-            <label htmlFor='password'></label>
             <input type='password' className='py-2 px-10 font-poppins rounded-[10px]' /*placeholder='Inserta Contraseña'*/
             onChange={handleInput} name="password"></input>
-            
-                      
           </div>
-          <div className='flex flex-1 flex-row items-center mt-3 mb-5'>
+          
+          <div className='items-center mt-3 mb-5'>
             <p className='font-medium text-[16px] font-poppins text-red'>{errors.password}</p>
           </div>
 
