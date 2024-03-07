@@ -17,21 +17,7 @@ function Login() {
   const handleInput = (event) => {
     setValues(prev => ({...prev, [event.target.name]: [event.target.value]}))
   }
-
-  /*const handleSubmit = (event) => {
-    event.preventDefault();
-    const validationErrors = Validation(values);
-    setErrors(validationErrors);
-
-    if(errors.email === "" && errors.password === "" ){
-      const response = await axios.post('http://localhost:8082/tfg/login', {
-        email: values.email,
-        password: values.password
-      });
-      
-      console.log(response)
-    }
-  }*/
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     const validationErrors = Validation(values);
