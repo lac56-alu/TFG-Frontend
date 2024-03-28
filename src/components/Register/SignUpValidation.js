@@ -2,7 +2,7 @@ function Validation(values) {
     let error = {}
     const name_pattern = /^[a-zA-Z]+$/
     const lastname_pattern = /^[a-zA-Z\s]+$/
-    const adress_pattern = /^[a-zA-Z\s]+$/
+    const adress_pattern = /^[0-9a-zA-Z\s]+$/
     const dni_pattern = /^\d{8}[a-zA-Z]$/
     const nie_pattern = /^[XYZ]\d{7,8}[A-Z]$/
     const telephone_pattern = /^[0-9]{9}$/

@@ -7,7 +7,7 @@ import axios from 'axios'
 import swal from 'sweetalert2'
 
 function Register() {
-const [values, setValues] = useState({
+    const [values, setValues] = useState({
         name: '',
         lastname: '',
         adress: '',
@@ -36,26 +36,28 @@ const [values, setValues] = useState({
             (async () => {
             try {
                 const response = await axios.post('http://localhost:8082/tfg/users/createUser', {
-                    name: values.name,
-                    lastname: values.lastname,
-                    adress: values.adress,
-                    identity_document: values.identity_document,
-                    telephone: values.telephone,
-                    email: values.email,
-                    password: values.password
+                    'name': values.name[0],
+                    'lastname': values.lastname[0],
+                    'adress': values.adress[0],
+                    'identity_document': values.identity_document[0],
+                    'telephone': values.telephone[0],
+                    'email': values.email[0],
+                    'password': values.password1[0]
                 });
 
                 // Manejar la respuesta de la API aquí
                 swal.fire({
                     icon: 'success',
-                    title: response.data
+                    title: '¡Bienvenido a Element Gym! Se ha registro correctamente.',
+                    showConfirmButton: false,
+                    timer: 5000
                 });
                 console.log('Respuesta de la API:', response.data);
             } catch (error) {
                 // Manejar errores de la solicitud
                 swal.fire({
                     icon: 'error',
-                    title: error.response.data.errorMessage
+                    title: 'Se ha producido un error en el registro del sistema... Disculpa las molestias'
                 });
                 console.error('Error de la API:', error.response.data.errorMessage);
             }
