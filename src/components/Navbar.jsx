@@ -1,6 +1,7 @@
 import {useState, userState } from 'react'
 import { close, logoElement2, menu } from '../assets';
 import {navLinks} from '../constants'
+import { useLocalStorage } from '../hooks/useLocalStorage' 
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -11,15 +12,36 @@ const Navbar = () => {
 
       {/*Crear el menu contenedor de los links de la navBar*/}
       <ul className='list-none sm:flex hidden justify-end items-center flex-1'>
-        { navLinks.map((nav, index) => (
+      {navLinks.map((nav, index) => {
+        if (nav.id == 'login' && window.localStorage.getItem('token')) {
+          return null;
+        }
+        if ((nav.id == 'logout' || nav.id == 'perfil') && !window.localStorage.getItem('token')) {
+          return null;
+        }
+        return (
           <li
             key={nav.id}
             className={`font-poppins font-normal cursor-pointer text-[16px] 
-                        ${index === navLinks.legth - 1 ? 'mr-0' : 'mr-10'} text-white hover:text-secondary`}>
-              <a href={nav.href}> {nav.title} </a>
-
-            </li>
-        ))}
+                        ${index === navLinks.length - 1 ? 'mr-4' : 'mr-10'} text-white hover:text-secondary`}>
+            <a onClick={(event) => {
+              if (nav.id == 'logout') {
+                try {
+                  window.localStorage.removeItem('token');
+                  window.location.href = nav.href;
+                } catch (error) {
+                  console.log(error);
+                } 
+              } else {
+                window.location.href = nav.href; // Redirige a la URL del enlace normalmente
+              }
+              event.preventDefault(); // Evita la navegación predeterminada
+            }}>
+              {nav.title}
+            </a>
+          </li>
+        );
+      })}
       </ul>
       
       {/*Este apartado es para el menu de movil*/}

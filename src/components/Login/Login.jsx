@@ -5,8 +5,11 @@ import Footer from '../Footer'
 import Validation from './LoginValidation'
 import axios from 'axios'
 import swal from 'sweetalert2'
+import { useLocalStorage } from '../../hooks/useLocalStorage' 
 
 function Login() {
+  const [token, setToken] = useLocalStorage ('token', '')
+
   const [values, setValues] = useState({
     email: '',
     password: ''
@@ -17,21 +20,7 @@ function Login() {
   const handleInput = (event) => {
     setValues(prev => ({...prev, [event.target.name]: [event.target.value]}))
   }
-
-  /*const handleSubmit = (event) => {
-    event.preventDefault();
-    const validationErrors = Validation(values);
-    setErrors(validationErrors);
-
-    if(errors.email === "" && errors.password === "" ){
-      const response = await axios.post('http://localhost:8082/tfg/login', {
-        email: values.email,
-        password: values.password
-      });
-      
-      console.log(response)
-    }
-  }*/
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     const validationErrors = Validation(values);
@@ -51,6 +40,9 @@ function Login() {
             title: response.data.token
           });
           console.log('Respuesta de la API:', response.data.token);
+
+          //Guardar token
+          setToken(response.data.token);
         } catch (error) {
           // Manejar errores de la solicitud
           swal.fire({
