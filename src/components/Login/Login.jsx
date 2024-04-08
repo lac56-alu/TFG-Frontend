@@ -5,8 +5,11 @@ import Footer from '../Footer'
 import Validation from './LoginValidation'
 import axios from 'axios'
 import swal from 'sweetalert2'
+import { useLocalStorage } from '../../hooks/useLocalStorage' 
 
 function Login() {
+  const [token, setToken] = useLocalStorage ('token', '')
+
   const [values, setValues] = useState({
     email: '',
     password: ''
@@ -37,6 +40,9 @@ function Login() {
             title: response.data.token
           });
           console.log('Respuesta de la API:', response.data.token);
+
+          //Guardar token
+          setToken(response.data.token);
         } catch (error) {
           // Manejar errores de la solicitud
           swal.fire({

@@ -26,6 +26,16 @@ export const navLinks = [
     href: "/login",
     title: "Log In",
   },
+  {
+    id: "perfil",
+    href: "/perfil",
+    title: "Mi Perfil",
+  },
+  {
+    id: "logout",
+    href: "/",
+    title: "Log Out",
+  },
 ];
 
 export const stats = [
