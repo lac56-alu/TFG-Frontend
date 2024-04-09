@@ -28,7 +28,7 @@ export const navLinks = [
   },
   {
     id: "perfil",
-    href: "/perfil",
+    href: "/profile",
     title: "Mi Perfil",
   },
   {

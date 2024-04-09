@@ -9,6 +9,7 @@ import FeedbackCard from './FeedbackCard'
 import CTA from './CTA'
 import Login from './Login/Login'
 import Register from './Register/Register'
+import Profile from './Profile/Profile'
 
 export {
     Navbar,
@@ -22,4 +23,5 @@ export {
     CTA,
     Login,
     Register,
+    Profile,
 };
