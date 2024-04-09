@@ -3,6 +3,8 @@ import styles from '../../style'
 import Navbar from '../Navbar'
 import Footer from '../Footer'
 import axios from 'axios'
+import { profileIcon } from '../../assets';
+import Button from "../Button"
 
 const Profile = () => {
 
@@ -38,14 +40,18 @@ const Profile = () => {
             </div>
     
             <div className={`${styles.flexCenter} ${styles.marginY} ${styles.padding} sm:flex-row flex-col bg-black-gradient-2 rounded-[20px] box-shadow`} >
-                <div className="flex-1 flex flex-col justify-center items-center">
-                    <h2 className={`${styles.heading2} mt-3`}>
-                        Perfil
-                    </h2>
+                <div className="flex flex-col justify-center items-center">
+                    <div className="text-center"> {/* Contenedor para texto e imagen */}
+                        <h2 className={`${styles.heading2} mt-3`}>
+                            Perfil
+                        </h2>
+                        <img src={profileIcon} alt='iconoPerfil' className='w-[120px] h-[120px] mt-3 sm: mb-8' /> {/* Ajusta la clase mt-3 según sea necesario */}
+                    </div>
                 </div>
+
     
                 {usuario && (
-                    <div className="sm:flex">
+                    <div className="sm:flex flex-1 justify-content">
                         {/* Bloque 1 */}
                         <div className="flex-1 flex flex-col items-center">
                             <div className="">
@@ -119,7 +125,13 @@ const Profile = () => {
                         </div>
                     </div>
                 )}
-    
+            </div>
+
+            <div className={`${styles.flexCenter} sm:flex-row flex-col`} >
+                <button type='button' className={`py-4 px-6 bg-blue-gradient font-poppins font-medium text-[18px] 
+                                    text-primary outline-none ${styles} rounded-[10px]`}>
+                    Modificar tu perfil
+                </button>
             </div>
     
             <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}>
