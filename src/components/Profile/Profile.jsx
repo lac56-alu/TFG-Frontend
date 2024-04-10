@@ -136,14 +136,14 @@ const Profile = () => {
                             </h2>
                         </div>
                         <div className="items-center">
-                            <h2 className="font-medium text-[22px] font-poppins text-white">
+                            <h2 className="font-medium text-[22px] font-poppins text-white mb-6">
                                 {usuario.adress ? usuario.adress : "No tiene"}
                             </h2>
                         </div>
-                        </div>
+                    </div>
     
                         {/* Bloque 2 */}
-                        <div className="flex-1 flex flex-col items-center sm:ml-10">
+                        <div className="flex-1 flex flex-col items-center">
                             <div className="items-center">
                                 <h2 className="font-medium text-[22px] font-poppins text-secondary">
                                     Teléfono
@@ -183,12 +183,12 @@ const Profile = () => {
 
             <div className={`${styles.flexCenter} sm:flex-row flex-col sm:flex`} >
                 <button type='button' className={`py-4 px-6 bg-blue-gradient font-poppins font-medium text-[18px] 
-                                    text-primary outline-none ${styles} rounded-[10px]`} onClick={redirectModifyProfile}>
+                                    text-primary outline-none ${styles} rounded-[10px] mb-2`} onClick={redirectModifyProfile}>
                     Modificar tu perfil
                 </button>
 
                 <button type='button' className={`py-4 px-6 bg-red-gradient font-poppins font-medium text-[18px] 
-                                    text-primary outline-none ${styles} rounded-[10px] ml-6`} onClick={deleteUser}>
+                                    text-primary outline-none ${styles} rounded-[10px] ml-3`} onClick={deleteUser}>
                     Eliminar mi cuenta
                 </button>
             </div>
