@@ -10,6 +10,7 @@ import CTA from './CTA'
 import Login from './Login/Login'
 import Register from './Register/Register'
 import Profile from './Profile/Profile'
+import ModifyProfile from './Profile/ModifyProfile'
 
 export {
     Navbar,
@@ -24,4 +25,5 @@ export {
     Login,
     Register,
     Profile,
+    ModifyProfile,
 };

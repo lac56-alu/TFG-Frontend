@@ -39,9 +39,8 @@ const Profile = () => {
             const urlCompleta = url + tokenUser;
             const urlSinComillas = urlCompleta.replace(/"/g, '');
             const response = await axios.delete(urlSinComillas);
-            console.log("HAsta aqui llega")
+            
             window.localStorage.removeItem('token');
-            console.log("QUITA TOKEN")
             window.location.href = '/';
         } catch(error){
             swal.fire({
@@ -99,7 +98,7 @@ const Profile = () => {
                         <h2 className={`${styles.heading2} mt-3`}>
                             Perfil
                         </h2>
-                        <img src={profileIcon} alt='iconoPerfil' className='w-[120px] h-[120px] mt-3 sm: mb-8' /> {/* Ajusta la clase mt-3 según sea necesario */}
+                        <img src={profileIcon} alt='iconoPerfil' className='w-[120px] h-[120px] mt-3 sm: mb-8' /> 
                     </div>
                 </div>
 
@@ -192,8 +191,6 @@ const Profile = () => {
                     Eliminar mi cuenta
                 </button>
             </div>
-
-            
     
             <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}>
                 <div className={`${styles.boxWidth}`}>
