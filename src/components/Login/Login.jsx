@@ -34,11 +34,15 @@ function Login() {
             password: values.password
           });
   
-          // Manejar la respuesta de la API aquí
+          /* Manejar la respuesta de la API aquí
           swal.fire({
             icon: 'success',
-            title: response.data.token
+            title: "Bienvenido a Element Gym",
+            timer: 2000,
           });
+          setTimeout(2000);
+          */
+          window.location.href = '/profile';
           console.log('Respuesta de la API:', response.data.token);
 
           //Guardar token

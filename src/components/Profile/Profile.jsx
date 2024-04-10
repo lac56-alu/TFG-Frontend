@@ -3,14 +3,13 @@ import styles from '../../style'
 import Navbar from '../Navbar'
 import Footer from '../Footer'
 import axios from 'axios'
+import swal from 'sweetalert2'
 import { profileIcon } from '../../assets';
-import Button from "../Button"
+import { useLocalStorage } from '../../hooks/useLocalStorage' 
 
 const Profile = () => {
 
     const[usuario, setUsuario] = useState();
-
-
 
     useEffect(() => {
         const getProfileData = async () => {
@@ -29,7 +28,35 @@ const Profile = () => {
         getProfileData();
     }, []);
     
+    const redirectModifyProfile = () => {
+        window.location.href = '/modify-profile';
+    };
 
+    const deleteUser = (async () => {
+        try {
+            const url = 'http://localhost:8082/tfg/users/deleteUserToken/';
+            const tokenUser = window.localStorage.getItem('token');
+            const urlCompleta = url + tokenUser;
+            const urlSinComillas = urlCompleta.replace(/"/g, '');
+            const response = await axios.delete(urlSinComillas);
+    
+            window.location.href = '/';
+            // Manejar la respuesta de la API aquí
+            swal.fire({
+              icon: 'success',
+              title: "Cuenta borrada correctamente",
+              timer: 5000,
+            });
+
+            useLocalStorage.removeValue();
+          } catch (error) {
+            swal.fire({
+              icon: 'error',
+              title: error.response.data.errorMessage
+            });
+            console.error('Error de la API:', error.response.data.errorMessage);
+          }
+    });
 
     return (
         <div className="bg-primary w-full overflow-hidden">
@@ -127,12 +154,19 @@ const Profile = () => {
                 )}
             </div>
 
-            <div className={`${styles.flexCenter} sm:flex-row flex-col`} >
+            <div className={`${styles.flexCenter} sm:flex-row flex-col sm:flex`} >
                 <button type='button' className={`py-4 px-6 bg-blue-gradient font-poppins font-medium text-[18px] 
-                                    text-primary outline-none ${styles} rounded-[10px]`}>
+                                    text-primary outline-none ${styles} rounded-[10px]`} onClick={redirectModifyProfile}>
                     Modificar tu perfil
                 </button>
+
+                <button type='button' className={`py-4 px-6 bg-red-gradient font-poppins font-medium text-[18px] 
+                                    text-primary outline-none ${styles} rounded-[10px] ml-6`} onClick={deleteUser}>
+                    Eliminar mi cuenta
+                </button>
             </div>
+
+            
     
             <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}>
                 <div className={`${styles.boxWidth}`}>
