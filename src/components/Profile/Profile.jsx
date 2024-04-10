@@ -32,31 +32,58 @@ const Profile = () => {
         window.location.href = '/modify-profile';
     };
 
-    const deleteUser = (async () => {
-        try {
+    const actionDeleteUser = (async () => {
+        try{
             const url = 'http://localhost:8082/tfg/users/deleteUserToken/';
             const tokenUser = window.localStorage.getItem('token');
             const urlCompleta = url + tokenUser;
             const urlSinComillas = urlCompleta.replace(/"/g, '');
             const response = await axios.delete(urlSinComillas);
-    
+            console.log("HAsta aqui llega")
+            window.localStorage.removeItem('token');
+            console.log("QUITA TOKEN")
             window.location.href = '/';
-            // Manejar la respuesta de la API aquí
+        } catch(error){
             swal.fire({
-              icon: 'success',
-              title: "Cuenta borrada correctamente",
-              timer: 5000,
-            });
-
-            useLocalStorage.removeValue();
-          } catch (error) {
-            swal.fire({
-              icon: 'error',
-              title: error.response.data.errorMessage
+                icon: 'error',
+                title: error.response.data.errorMessage
             });
             console.error('Error de la API:', error.response.data.errorMessage);
-          }
+        }
     });
+
+    const deleteUser = () => {
+        swal.fire({
+            icon: 'warning',
+            title: "Advertencia",
+            text: "¿Está seguro que desea eliminar su cuenta?",
+            showDenyButton: true,
+            denyButtonText: 'No',
+            showConfirmButton: true,
+            confirmButtonText: 'Si',
+            confirmButtonColor: '#000000'
+        }).then(response => {
+            try {
+                if (response.isConfirmed) {
+                    actionDeleteUser();
+                } else if (response.isDenied) {
+                    console.log("No pasó nada");
+                } else {
+                    swal.fire({
+                    icon: 'error',
+                    title: "Error",
+                    text: "Ocurrió algún tipo de error",
+                    })
+                }
+            } catch (error) {
+                swal.fire({
+                    icon: 'error',
+                    title: error.response.data.errorMessage
+                });
+                console.error('Error de la API:', error.response.data.errorMessage);
+            }
+        });
+    };      
 
     return (
         <div className="bg-primary w-full overflow-hidden">
