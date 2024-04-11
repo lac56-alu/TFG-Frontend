@@ -39,6 +39,10 @@ export default function ModifyProfile() {
         getProfileData();
     }, []);
 
+    const redirectProfile = () => {
+        window.location.href = '/profile';
+    };
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const validationErrors = Validation(usuario);
@@ -54,7 +58,7 @@ export default function ModifyProfile() {
                 const tokenUser = window.localStorage.getItem('token');
                 const urlCompleta = url + tokenUser;
                 const urlSinComillas = urlCompleta.replace(/"/g, '');
-                const response = await axios.post(urlSinComillas, {
+                const response = await axios.patch(urlSinComillas, {
                     'name': usuario.name,
                     'lastname': usuario.lastname,
                     'adress': usuario.adress,
@@ -199,6 +203,11 @@ export default function ModifyProfile() {
                         <button type='submit' className={`justify-center items-center py-4 px-6 bg-blue-gradient font-poppins font-medium text-[18px] text-primary 
                                                 outline-none rounded-[10px] mt-8`}>
                             Modificar
+                        </button>
+
+                        <button type='button' className={`py-4 px-6 bg-red-gradient font-poppins font-medium text-[18px] 
+                                    text-primary outline-none ${styles} rounded-[10px] ml-3`}  onClick={redirectProfile}>
+                            Cancelar
                         </button>
                     </form>
                 )}
