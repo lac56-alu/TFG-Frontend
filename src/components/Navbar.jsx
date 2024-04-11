@@ -51,14 +51,35 @@ const Navbar = () => {
         
         <div className={`${toggle ? 'flex' : 'hidden'} p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[280px] rounded-[10px] sidebar`}>
           <ul className='list-none flex-col justify_end items-center flex-1'>
-            { navLinks.map((nav, index) => (
+            { navLinks.map((nav, index) => {
+              if (nav.id == 'login' && window.localStorage.getItem('token')) {
+                return null;
+              }
+              if ((nav.id == 'logout' || nav.id == 'perfil') && !window.localStorage.getItem('token')) {
+                return null;
+              }
+              return (
               <li
                 key={nav.id}
                 className={`font-poppins font-normal cursor-pointer text-[35px] 
                             ${index === navLinks.legth - 1 ? 'mr-0' : 'mb-4'} text-white mt-6`}>
-                  <a href={nav.href} key={nav.key}> {nav.title} </a>
+                  <a onClick={(event) => {
+                      if (nav.id == 'logout') {
+                        try {
+                          window.localStorage.removeItem('token');
+                          window.location.href = nav.href;
+                        } catch (error) {
+                          console.log(error);
+                        } 
+                      } else {
+                        window.location.href = nav.href;
+                      }
+                      event.preventDefault();
+                      }}>
+                    {nav.title}
+                  </a>
                 </li>
-            ))}
+            )})}
           </ul>
         </div>
 
