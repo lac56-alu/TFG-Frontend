@@ -14,6 +14,16 @@
   --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
 }
 
+:root {
+  --blue-gradient: linear-gradient(
+    144.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #306de62a 91.61%
+  );
+  --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+}
+
 * {
   scroll-behavior: smooth;
 }
@@ -37,23 +47,23 @@
 .bg-blue-gradient {
   background: linear-gradient(
     157.81deg,
-    #b6c6e5 -43.27%,
-    #8ca7df -21.24%,
-    #7296de 12.19%,
-    #5984dc 29.82%,
-    #3b73e2 51.94%,
-    #306CE6 90.29%
+    #89a4db -43.27%,
+    #6d94e2 -21.24%,
+    #477ae0 12.19%,
+    #2f66d5 29.82%,
+    #0e4ecf 51.94%,
+    #0b4ac8 90.29%
   );
 }
 
 .bg-red-gradient {
   background: linear-gradient(
     157.81deg,
-    #ef8585 -21.24%,
-    #f47171 12.19%,
-    #ee4b4b 29.82%,
-    #f14848 51.94%,
-    #e90b0b 90.29%
+    #e55b5b -21.24%,
+    #da4848 12.19%,
+    #d62f2f 29.82%,
+    #c91414 51.94%,
+    #c90d0d 90.29%
   ); 
 }
 
@@ -67,6 +77,24 @@
 }
 
 .bg-black-gradient-2 {
+  background: linear-gradient(
+    -168.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+}
+
+.bg-blue-strong-gradient {
+  background: linear-gradient(
+    -168.39deg,
+    #ffffff6b -278.56%,
+    #6a8fd82e -78.47%,
+    #306de642 91.61%
+  );
+}
+
+.bg-blue-low-gradient {
   background: linear-gradient(
     -168.39deg,
     #ffffff -278.56%,
@@ -148,4 +176,33 @@
 .white__gradient {
   background: rgba(255, 255, 255, 0.6);
   filter: blur(750px);
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 20px; 
+}
+
+@media (max-width: 768px) {
+  .gridContainer {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+
+.textGold {
+  color: goldenrod;
+}
+
+.textPlatinum {
+  color: #7296de;
+}
+
+.textSilver {
+  color: #C0C0C0;
+}
+
+.box-shadow:hover {
+  background: var(--blue-gradient);
 }
