@@ -6,9 +6,13 @@ import { useLocalStorage } from '../hooks/useLocalStorage'
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
+  const redirectHome = () => {
+    window.location.href="/";
+  }
+
   return (
     <nav className='w-full flex py-3 justify-between items-left navbar'>
-      <img src={logoElement2} alt='logoElement' className='w-[120px] h-[85px] flex flex-start ' />
+      <img src={logoElement2} alt='logoElement' onClick={redirectHome} className='w-[120px] h-[85px] flex flex-start ' />
       {/*Crear el menu contenedor de los links de la navBar*/}
       <ul className='list-none sm:flex hidden justify-end items-center flex-1'>
       {navLinks.map((nav, index) => {

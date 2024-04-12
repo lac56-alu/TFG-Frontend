@@ -16,7 +16,7 @@ const Hero = () => (
         <h1 className='flex-1 font-poppins font-semibold ss:text-[63px] text-[50px] text-white 
                        ss:leading-[100px] leading-[75px]'>
           Conoce el <br className='sm:block hidden'/> {" "}
-          <span className='text-gradient'>
+          <span className='text-secondary'>
             Método Element
           </span> <br className='sm:block hidden'/> {" "}
           y empieza a sentirte bien
