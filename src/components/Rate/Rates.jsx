@@ -9,7 +9,7 @@ import { useLocalStorage } from '../../hooks/useLocalStorage'
 export default function Rates() {
     return (
     <div className="bg-primary w-full overflow-hidden">
-            <div className={` ${styles.flexRight}`}>
+            <div className={` ${styles.flexCenter}`}>
                 <div className={`${styles.boxWidth}`}>
                     <Navbar />
                 </div>
@@ -53,7 +53,7 @@ export default function Rates() {
                     </p>
 
                     <button type='button' className={`py-4 px-6 bg-blue-gradient font-poppins font-medium text-[18px] 
-                                    text-primary outline-none ${styles} rounded-[10px] mb-2 mt-5`}>
+                                    text-primary outline-none ${styles} rounded-[10px] mb-5 mt-5`}>
                         ¡La quiero!
                     </button>
                 </div>
@@ -81,7 +81,7 @@ export default function Rates() {
                     </p>
 
                     <button type='button' className={`py-4 px-6 bg-blue-gradient font-poppins font-medium text-[18px] 
-                                    text-primary outline-none ${styles} rounded-[10px] mb-2 mt-5`}>
+                                    text-primary outline-none ${styles} rounded-[10px] mb-5 mt-5`}>
                         ¡La quiero!
                     </button>
                 </div>
@@ -110,7 +110,7 @@ export default function Rates() {
                     </p>
 
                     <button type='button' className={`py-4 px-6 bg-blue-gradient font-poppins font-medium text-[18px] 
-                                    text-primary outline-none ${styles} rounded-[10px] mb-2 mt-5`}>
+                                    text-primary outline-none ${styles} rounded-[10px] mb-5 mt-5`}>
                         ¡La quiero!
                     </button>
                 </div>
