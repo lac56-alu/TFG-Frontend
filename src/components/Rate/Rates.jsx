@@ -7,6 +7,65 @@ import swal from 'sweetalert2'
 import { useLocalStorage } from '../../hooks/useLocalStorage' 
 
 export default function Rates() {
+
+    const actionSelectRate = (async (idRate) => {
+        try{
+            const url = 'http://localhost:8082/tfg/rates/updateRateUser/';
+            const tokenUser = window.localStorage.getItem('token');
+            const urlCompleta = url + tokenUser + "/" + idRate;
+            const urlSinComillas = urlCompleta.replace(/"/g, '');
+            const response = await axios.patch(urlSinComillas);
+            
+            swal.fire({
+                icon: 'success',
+                title: "¡Tarifa seleccionada!",
+                text: "Has seleccionado la tarifa correctamente.",
+                showConfirmButton: false,
+                timer: 5000
+            });
+            console.log('Respuesta de la API:', response.data);
+        } catch(error){
+            swal.fire({
+                icon: 'error',
+                title: error.response.data.errorMessage
+            });
+            console.error('Error de la API:', error.response.data.errorMessage);
+        }
+    });
+
+    const selectRate = (idRate) => {
+        swal.fire({
+            icon: 'info',
+            title: "Atención",
+            text: "¿Está seguro que desea contratar esta tarifa?",
+            showDenyButton: true,
+            denyButtonText: 'No',
+            showConfirmButton: true,
+            confirmButtonText: 'Si',
+            confirmButtonColor: '#000000'
+        }).then(response => {
+            try {
+                if (response.isConfirmed) {
+                    actionSelectRate(idRate);
+                } else if (response.isDenied) {
+                    console.log("No pasó nada");
+                } else {
+                    swal.fire({
+                        icon: 'error',
+                        title: "Error",
+                        text: "Ocurrió algún tipo de error",
+                    })
+                }
+            } catch (error) {
+                swal.fire({
+                    icon: 'error',
+                    title: error.response.data.errorMessage
+                });
+                console.error('Error de la API:', error.response.data.errorMessage);
+            }
+        });
+    };   
+
     return (
     <div className="bg-primary w-full overflow-hidden">
             <div className={` ${styles.flexCenter}`}>
@@ -53,7 +112,7 @@ export default function Rates() {
                     </p>
 
                     <button type='button' className={`py-4 px-6 bg-blue-gradient font-poppins font-medium text-[18px] 
-                                    text-primary outline-none ${styles} rounded-[10px] mb-5 mt-5`}>
+                                    text-primary outline-none ${styles} rounded-[10px] mb-5 mt-5`} onClick={() => selectRate(1)}>
                         ¡La quiero!
                     </button>
                 </div>
@@ -81,7 +140,7 @@ export default function Rates() {
                     </p>
 
                     <button type='button' className={`py-4 px-6 bg-blue-gradient font-poppins font-medium text-[18px] 
-                                    text-primary outline-none ${styles} rounded-[10px] mb-5 mt-5`}>
+                                    text-primary outline-none ${styles} rounded-[10px] mb-5 mt-5`} onClick={() => selectRate(2)}>
                         ¡La quiero!
                     </button>
                 </div>
@@ -110,7 +169,7 @@ export default function Rates() {
                     </p>
 
                     <button type='button' className={`py-4 px-6 bg-blue-gradient font-poppins font-medium text-[18px] 
-                                    text-primary outline-none ${styles} rounded-[10px] mb-5 mt-5`}>
+                                    text-primary outline-none ${styles} rounded-[10px] mb-5 mt-5`} onClick={() => selectRate(3)}>
                         ¡La quiero!
                     </button>
                 </div>

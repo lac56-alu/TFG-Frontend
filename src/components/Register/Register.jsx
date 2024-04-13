@@ -42,7 +42,8 @@ function Register() {
                     'identity_document': values.identity_document[0],
                     'telephone': values.telephone[0],
                     'email': values.email[0],
-                    'password': values.password1[0]
+                    'password': values.password1[0],
+                    'fk_type_users': 2
                 });
 
                 // Manejar la respuesta de la API aquí
