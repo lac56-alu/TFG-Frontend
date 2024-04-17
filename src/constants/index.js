@@ -32,10 +32,15 @@ export const navLinks = [
     title: "Mi Perfil",
   },
   {
+    id: "adminPanel",
+    href: "/adminpanel",
+    title: "Panel Admin",
+  },
+  {
     id: "logout",
     href: "/",
     title: "Log Out",
-  },
+  }
 ];
 
 export const stats = [

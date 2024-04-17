@@ -26,6 +26,9 @@ import people03 from "./people03.png";
 import logoElement from "./logoElement.svg";
 import logoElement2 from "./logoElement2.png";
 import profileIcon from "./profileIcon.png";
+import rateIcon from "./rateIcon.png";
+import blogIcon from "./blogIcon.png";
+import scheduleIcon from "./scheduleIcon.png";
 
 export {
   airbnb,
@@ -56,4 +59,7 @@ export {
   logoElement,
   logoElement2,
   profileIcon,
+  rateIcon,
+  blogIcon,
+  scheduleIcon,
 };

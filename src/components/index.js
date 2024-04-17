@@ -12,6 +12,7 @@ import Register from './Register/Register'
 import Profile from './Profile/Profile'
 import ModifyProfile from './Profile/ModifyProfile'
 import Rates from './Rate/Rates'
+import AdminPanel from './Admin/AdminPanel'
 
 export {
     Navbar,
@@ -28,4 +29,5 @@ export {
     Profile,
     ModifyProfile,
     Rates,
+    AdminPanel,
 };

@@ -5,6 +5,7 @@ import Register from '../components/Register/Register'
 import Profile from '../components/Profile/Profile'
 import ModifyProfile from '../components/Profile/ModifyProfile'
 import Rates from '../components/Rate/Rates'
+import AdminPanel from '../components/Admin/AdminPanel'
 
 function AppRouter (){
   return (
@@ -15,6 +16,7 @@ function AppRouter (){
         <Route path='/profile' element={ <Profile /> } />
         <Route path='/modify-profile' element={ <ModifyProfile /> } />
         <Route path='/rates' element={ <Rates /> } />
+        <Route path='/adminpanel' element={ <AdminPanel /> } />
 
         <Route path='/*' element={ <Navigate to="/"/> } />
     </Routes>
