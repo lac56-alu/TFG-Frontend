@@ -8,7 +8,7 @@ export const navLinks = [
   },
   {
     id: "tarifas",
-    href: "/tarifas",
+    href: "/rates",
     title: "Tarifas",
   },
   {
