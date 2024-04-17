@@ -6,6 +6,7 @@ import Profile from '../components/Profile/Profile'
 import ModifyProfile from '../components/Profile/ModifyProfile'
 import Rates from '../components/Rate/Rates'
 import AdminPanel from '../components/Admin/AdminPanel'
+import UserAdmin from '../components/Admin/UserAdmin'
 
 function AppRouter (){
   return (
@@ -17,6 +18,7 @@ function AppRouter (){
         <Route path='/modify-profile' element={ <ModifyProfile /> } />
         <Route path='/rates' element={ <Rates /> } />
         <Route path='/adminpanel' element={ <AdminPanel /> } />
+        <Route path='/user-admin' element={ <UserAdmin /> } />
 
         <Route path='/*' element={ <Navigate to="/"/> } />
     </Routes>
