@@ -4,6 +4,8 @@ import Navbar from '../Navbar'
 import Footer from '../Footer'
 import axios from 'axios'
 import swal from 'sweetalert2'
+import { searchIcon } from '../../assets';
+
 
 export default function UserAdmin() {
     const [usuarios, setUsuarios] = useState([]);
@@ -32,8 +34,23 @@ export default function UserAdmin() {
     };
 
     const usuariosFiltrados = usuarios.filter((user) =>
-        user.name.toLowerCase().includes(busqueda.toLowerCase())
+        (user.name.toLowerCase() + ' ' + user.lastname.toLowerCase()).includes(busqueda.toLowerCase())
     );
+
+    const showProfile = (user) => {
+        swal.fire({
+            title: `<div className="flex justify-start items-start"> 
+                        <p> <strong>Nombre: </strong>${user.name} ${user.lastname}</p>
+                        <p><strong>Teléfono: </strong>${user.telephone ? user.telephone : "No tiene"}</p>
+                        <p><strong>Email: </strong>${user.email}</p>
+                        <p><strong>identity_document: </strong>${user.identity_document ? user.identity_document : "No tiene"}</p>
+                        <p><strong>Dirección: </strong>${user.adress ? user.adress : "No tiene"}</p>
+                    </div>`,
+            confirmButtonText: "Cerrar",
+            icon: "info",
+        });        
+    };
+
 
     return (
         <div className="bg-primary w-full overflow-hidden">
@@ -50,22 +67,41 @@ export default function UserAdmin() {
                             Adminstración de usuarios
                         </h2>
                     </div>
-                    <input
-                        type="text"
-                        placeholder="Buscar usuarios..."
-                        value={busqueda}
-                        onChange={handleBusquedaChange}
-                        className={`${styles.input} mt-4 py-2 px-10 font-poppins rounded-[10px]`}
-                    />
+                    
+                    <div className="relative">
+                        <input
+                            type="text"
+                            placeholder="Buscar usuarios..."
+                            value={busqueda}
+                            onChange={handleBusquedaChange}
+                            className={`${styles.input} mt-4 py-2 px-16 font-poppins rounded-[10px]`}
+                        />
+                        <img src={searchIcon} alt='searchIcon' className='absolute top-0 right-0 w-[30px] h-[30px] mt-5 mr-2' /> 
+                    </div>
+
                 </div>
             </div>
 
-            <div className={`${styles.flexCenter} ${styles.marginY} ${styles.padding} sm:flex-row flex-col flex flex-1 gridContainer2`}>
+            <div className={`${styles.padding} sm:flex-row flex-col flex-grow flex flex-1 gridContainer2`}>
                 {usuariosFiltrados.map((user, index) => (
-                    <button key={index} className={`${styles.flexCenter} bg-black-gradient-2 rounded-[20px] box-shadow flex flex-col flex-grow sm:mr-4`}>
-                        <p className={`${styles.paragraph} ${styles.flexCenter} text-center mt-2 max-w-[90%]`}>
-                            {user.name}
-                        </p>
+                    <button key={index} className={`bg-black-gradient-2 rounded-[20px] box-shadow flex flex-grow sm:mr-4`}>
+                        <div className={`${styles.flexLeft} flex flex-grow`} >
+                            <p className={`${styles.paragraph} text-left mt-2 ml-5 max-w-[90%] mr-4`}>
+                                {user.name} {user.lastname}
+                            </p>
+                        </div>
+
+                        <div className={`${styles.flexRight} flex flex-grow`} >
+                            <button type='button' className={`${styles.flexCenter} py-2 px-4 bg-blue-gradient font-poppins font-medium text-[14px] 
+                                                                text-primary outline-none ${styles} rounded-[10px] mr-2 mb-2 mt-2`} onClick={() => showProfile(user)}>
+                                Ver perfil 
+                            </button>
+
+                            <button type='button' className={`${styles.flexCenter} py-2 px-4 bg-red-gradient font-poppins font-medium text-[14px] 
+                                                                text-primary outline-none ${styles} rounded-[10px] mb-2 mt-2 mr-2`}>
+                                Eliminar usuario
+                            </button>
+                        </div>
                     </button>
                 ))}
             </div>

@@ -29,6 +29,7 @@ import profileIcon from "./profileIcon.png";
 import rateIcon from "./rateIcon.png";
 import blogIcon from "./blogIcon.png";
 import scheduleIcon from "./scheduleIcon.png";
+import searchIcon from "./searchIcon.png";
 
 export {
   airbnb,
@@ -62,4 +63,5 @@ export {
   rateIcon,
   blogIcon,
   scheduleIcon,
+  searchIcon,
 };
