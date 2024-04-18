@@ -151,7 +151,7 @@ export default function Rates() {
                         SIN COMPROMISOS DE PERMANENCIA
                     </p>
                     <p className={`${styles.heading4} ${styles.flexCenter} text-center mt-2 max-w-[90%]`}>
-                        1 MESES
+                        1 MES
                     </p>
                     <h2 className={`${styles.heading6} ${styles.flexCenter} textSilver`}>
                         Silver Package

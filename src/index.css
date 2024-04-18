@@ -190,6 +190,18 @@
   }
 }
 
+.gridContainer2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+  gap: 20px; 
+}
+
+@media (max-width: 768px) {
+  .gridContainer2 {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
 
 .textGold {
   color: goldenrod;

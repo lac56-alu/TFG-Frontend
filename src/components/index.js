@@ -12,6 +12,10 @@ import Register from './Register/Register'
 import Profile from './Profile/Profile'
 import ModifyProfile from './Profile/ModifyProfile'
 import Rates from './Rate/Rates'
+import AdminPanel from './Admin/AdminPanel'
+import UserAdmin from './Admin/UserAdmin'
+import RateAdmin from './Admin/RateAdmin'
+
 
 export {
     Navbar,
@@ -28,4 +32,7 @@ export {
     Profile,
     ModifyProfile,
     Rates,
+    AdminPanel,
+    UserAdmin,
+    RateAdmin,
 };

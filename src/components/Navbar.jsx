@@ -19,7 +19,7 @@ const Navbar = () => {
         if (nav.id == 'login' && window.localStorage.getItem('token')) {
           return null;
         }
-        if ((nav.id == 'logout' || nav.id == 'perfil') && !window.localStorage.getItem('token')) {
+        if ((nav.id == 'logout' || nav.id == 'perfil' || nav.id == 'adminPanel') && !window.localStorage.getItem('token')) {
           return null;
         }
         return (
