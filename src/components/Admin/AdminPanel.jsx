@@ -11,7 +11,7 @@ function AdminPanel() {
     }
     
     const redirectRateAdmin = () =>{
-        window.location.href = '/rates'; 
+        window.location.href = '/rate-admin'; 
     }
 
     const redirectBlogAdmin = () =>{

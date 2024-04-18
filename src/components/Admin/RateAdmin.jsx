@@ -7,23 +7,23 @@ import swal from 'sweetalert2'
 import { searchIcon } from '../../assets';
 
 
-export default function UserAdmin() {
-    const [usuarios, setUsuarios] = useState([]);
+export default function RateAdmin() {
+    const [rates, setRates] = useState([]);
     const [busqueda, setBusqueda] = useState('');
 
     useEffect(() => {
-        getUsers();
+        getRates();
     }, []);
 
-    const getUsers = async () => {
+    const getRates = async () => {
         try {
-            const url = 'http://localhost:8082/tfg/users/getUsersAdmin/';
+            const url = 'http://localhost:8082/tfg/rates/getRatesAdmin/';
             const tokenUser = window.localStorage.getItem('token');
             const urlCompleta = url + tokenUser;
             const urlSinComillas = urlCompleta.replace(/"/g, '');
             const response = await axios.get(urlSinComillas);
 
-            setUsuarios(response.data);
+            setRates(response.data);
         } catch (error) {
             console.log(error);
         }
@@ -33,40 +33,37 @@ export default function UserAdmin() {
         setBusqueda(e.target.value);
     };
 
-    const usuariosFiltrados = usuarios.filter((user) =>
-        (user.name.toLowerCase() + ' ' + user.lastname.toLowerCase()+ ' ' + user.identity_document.toLowerCase()).includes(busqueda.toLowerCase())
+    const tarifasFiltradas = rates.filter((rate) =>
+        (rate.name.toLowerCase() + ' ' + rate.value.toString()).includes(busqueda.toLowerCase())
     );
 
-    const showProfile = (user) => {
+    const showRate = (rate) => {
         swal.fire({
             title: `<div className="flex justify-start items-start"> 
-                        <p> <strong>Nombre: </strong>${user.name} ${user.lastname}</p>
-                        <p><strong>Teléfono: </strong>${user.telephone ? user.telephone : "No tiene"}</p>
-                        <p><strong>Email: </strong>${user.email}</p>
-                        <p><strong>identity_document: </strong>${user.identity_document ? user.identity_document : "No tiene"}</p>
-                        <p><strong>Dirección: </strong>${user.adress ? user.adress : "No tiene"}</p>
+                        <p> <strong>Nombre: </strong>${rate.name}</p>
+                        <p><strong>Coste: </strong>${rate.value ? rate.value : "No tiene"}€/mes</p>
                     </div>`,
             confirmButtonText: "Cerrar",
             icon: "info",
         });        
     };
 
-    const actionDeleteUser = (async (idUser) => {
+    const actionDeleteRate = (async (idRate) => {
         try{
-            const url = 'http://localhost:8082/tfg/users/deleteUserAdmin/';
+            const url = 'http://localhost:8082/tfg/rates/deleteRateAdmin/';
             const tokenUser = window.localStorage.getItem('token');
-            const urlCompleta = url + tokenUser + "/" + idUser.toString();
+            const urlCompleta = url + tokenUser + "/" + idRate.toString();
             const urlSinComillas = urlCompleta.replace(/"/g, '');
             const response = await axios.delete(urlSinComillas);
 
             swal.fire({
                 icon: 'success',
-                title: "¡Usuario borrado!",
-                text: "Has borrado el usuario correctamente.",
+                title: "Tarifa borrada!",
+                text: "Has borrado la tarifa correctamente.",
                 showConfirmButton: false,
                 timer: 5000
             });
-            getUsers();
+            getRates();
         } catch(error){
             swal.fire({
                 icon: 'error',
@@ -76,11 +73,11 @@ export default function UserAdmin() {
         }
     });
 
-    const deleteUser = (user) => {
+    const deleteRate = (rate) => {
         swal.fire({
             icon: 'warning',
             title: "Advertencia",
-            text: "¿Está seguro que desea eliminar este usuario?",
+            text: "¿Está seguro que desea eliminar esta tarifa?",
             showDenyButton: true,
             denyButtonText: 'No',
             showConfirmButton: true,
@@ -89,7 +86,7 @@ export default function UserAdmin() {
         }).then(response => {
             try {
                 if (response.isConfirmed) {
-                    actionDeleteUser(user.id);
+                    actionDeleteRate(rate.id);
                 } else if (response.isDenied) {
                     console.log("No pasó nada");
                 } else {
@@ -122,14 +119,14 @@ export default function UserAdmin() {
                 <div className="flex flex-col justify-center items-center">
                     <div className="text-center">
                         <h2 className={`${styles.heading2}`}>
-                            Adminstración de usuarios
+                            Adminstración de tarifas
                         </h2>
                     </div>
                     
                     <div className="relative">
                         <input
                             type="text"
-                            placeholder="Buscar usuarios..."
+                            placeholder="Buscar tarifas..."
                             value={busqueda}
                             onChange={handleBusquedaChange}
                             className={`${styles.input} mt-4 py-2 px-16 font-poppins rounded-[10px]`}
@@ -141,23 +138,23 @@ export default function UserAdmin() {
             </div>
 
             <div className={`${styles.padding} sm:flex-row flex-col flex-grow flex flex-1 gridContainer2`}>
-                {usuariosFiltrados.map((user, index) => (
+                {tarifasFiltradas.map((rate, index) => (
                     <button key={index} className={`bg-black-gradient-2 rounded-[20px] box-shadow flex flex-grow sm:mr-4`}>
                         <div className={`${styles.flexLeft} flex flex-grow`} >
                             <p className={`${styles.paragraph} text-left mt-2 ml-5 max-w-[90%] mr-4`}>
-                                {user.name} {user.lastname}
+                                {rate.name}
                             </p>
                         </div>
 
                         <div className={`${styles.flexRight} flex flex-grow`} >
                             <button type='button' className={`${styles.flexCenter} py-2 px-4 bg-blue-gradient font-poppins font-medium text-[14px] 
-                                                                text-primary outline-none ${styles} rounded-[10px] mr-2 mb-2 mt-2`} onClick={() => showProfile(user)}>
-                                Ver perfil 
+                                                                text-primary outline-none ${styles} rounded-[10px] mr-2 mb-2 mt-2`} onClick={() => showRate(rate)}>
+                                Ver detalles 
                             </button>
 
                             <button type='button' className={`${styles.flexCenter} py-2 px-4 bg-red-gradient font-poppins font-medium text-[14px] 
-                                                                text-primary outline-none ${styles} rounded-[10px] mb-2 mt-2 mr-2`} onClick={() => deleteUser(user)}>
-                                Eliminar usuario
+                                                                text-primary outline-none ${styles} rounded-[10px] mb-2 mt-2 mr-2`} onClick={() => deleteRate(rate)}>
+                                Eliminar tarifa
                             </button>
                         </div>
                     </button>

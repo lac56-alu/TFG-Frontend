@@ -14,6 +14,7 @@ import ModifyProfile from './Profile/ModifyProfile'
 import Rates from './Rate/Rates'
 import AdminPanel from './Admin/AdminPanel'
 import UserAdmin from './Admin/UserAdmin'
+import RateAdmin from './Admin/RateAdmin'
 
 
 export {
@@ -33,4 +34,5 @@ export {
     Rates,
     AdminPanel,
     UserAdmin,
+    RateAdmin,
 };

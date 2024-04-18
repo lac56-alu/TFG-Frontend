@@ -7,6 +7,7 @@ import ModifyProfile from '../components/Profile/ModifyProfile'
 import Rates from '../components/Rate/Rates'
 import AdminPanel from '../components/Admin/AdminPanel'
 import UserAdmin from '../components/Admin/UserAdmin'
+import RateAdmin from '../components/Admin/RateAdmin'
 
 function AppRouter (){
   return (
@@ -19,6 +20,7 @@ function AppRouter (){
         <Route path='/rates' element={ <Rates /> } />
         <Route path='/adminpanel' element={ <AdminPanel /> } />
         <Route path='/user-admin' element={ <UserAdmin /> } />
+        <Route path='/rate-admin' element={ <RateAdmin /> } />
 
         <Route path='/*' element={ <Navigate to="/"/> } />
     </Routes>
