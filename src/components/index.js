@@ -15,6 +15,8 @@ import Rates from './Rate/Rates'
 import AdminPanel from './Admin/AdminPanel'
 import UserAdmin from './Admin/UserAdmin'
 import RateAdmin from './Admin/RateAdmin'
+import BookingsMain from './Booking/BookingsMain'
+import GymBooking from './Booking/GymBooking'
 
 
 export {
@@ -35,4 +37,6 @@ export {
     AdminPanel,
     UserAdmin,
     RateAdmin,
+    BookingsMain,
+    GymBooking,
 };

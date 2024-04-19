@@ -2,14 +2,14 @@ import { people01, people02, people03, facebook, instagram, linkedin, twitter, a
 
 export const navLinks = [
   {
-    id: "home",
-    href: "/",
-    title: "Home",
-  },
-  {
     id: "tarifas",
     href: "/rates",
     title: "Tarifas",
+  },
+  {
+    id: "reservas",
+    href: "/booking",
+    title: "Reservas",
   },
   {
     id: "horario",

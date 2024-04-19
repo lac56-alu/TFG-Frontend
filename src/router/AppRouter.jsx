@@ -8,6 +8,8 @@ import Rates from '../components/Rate/Rates'
 import AdminPanel from '../components/Admin/AdminPanel'
 import UserAdmin from '../components/Admin/UserAdmin'
 import RateAdmin from '../components/Admin/RateAdmin'
+import BookingsMain from '../components/Booking/BookingsMain'
+import GymBooking from '../components/Booking/GymBooking'
 
 function AppRouter (){
   return (
@@ -21,6 +23,8 @@ function AppRouter (){
         <Route path='/adminpanel' element={ <AdminPanel /> } />
         <Route path='/user-admin' element={ <UserAdmin /> } />
         <Route path='/rate-admin' element={ <RateAdmin /> } />
+        <Route path='/booking' element={ <BookingsMain /> } />
+        <Route path='/gym-booking' element={ <GymBooking /> } />
 
         <Route path='/*' element={ <Navigate to="/"/> } />
     </Routes>
