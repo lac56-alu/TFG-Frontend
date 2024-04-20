@@ -8,25 +8,41 @@ import { useLocalStorage } from '../../hooks/useLocalStorage'
 import { gymIcon, instalacionesIcon } from '../../assets';
 
 export default function GymBooking() {
+    useEffect(() => {
+        actualizarDisponibilidad(horasDisponibles);
+    }, []);
+
     const horasDisponibles = [
-        { hora: '09:00' },
-        { hora: '10:00' },
-        { hora: '11:00' },
-        { hora: '12:00' },
-        { hora: '13:00' },
-        { hora: '14:00' },
-        { hora: '15:00' },
-        { hora: '16:00' },
-        { hora: '17:00' },
-        { hora: '18:00' },
-        { hora: '19:00' },
-        { hora: '20:00' },
-        { hora: '21:00' },    
+        { hora: '09', available: true },
+        { hora: '10', available: true },
+        { hora: '11', available: true },
+        { hora: '12', available: true },
+        { hora: '13', available: true },
+        { hora: '14', available: true },
+        { hora: '15', available: true },
+        { hora: '16', available: true },
+        { hora: '17', available: true },
+        { hora: '18', available: true },
+        { hora: '19', available: true },
+        { hora: '20', available: true },
+        { hora: '21', available: true },    
     ];
 
-    const reservarHora = (hora) => {
-        alert('Has reservado la hora: ' + hora);
-    };
+    function actualizarDisponibilidad(horasDisponibles) {
+        const horaActual = new Date().getHours();
+    
+        horasDisponibles.forEach(comprobar => {
+            const horaArray = parseInt(comprobar.hora);
+            comprobar.available = horaArray >= horaActual; 
+        });
+    
+        return horasDisponibles;
+    }
+    
+    // Uso de la función
+    const horasDisponiblesActualizadas = actualizarDisponibilidad(horasDisponibles);
+    console.log(horasDisponiblesActualizadas);
+    
 
   return (
     <div className="bg-primary w-full overflow-hidden">
@@ -51,19 +67,22 @@ export default function GymBooking() {
                 {horasDisponibles.map((horaDisponible, index) => (
                     <div className={`${styles.flexCenter} flex`} key={index}>
                         <p className={`texto-centrado text-secondary px-4`}>
-                            {horaDisponible.hora}
+                            {horaDisponible.hora}:00
                         </p>
                             
                         <div className={`${styles.flexRight} flex flex-grow flex px-4`}>
-                            <button className="button-booking bg-white rounded-[4px] border box-shadow3 texto-centrado"></button>
+                            <button className="button-booking bg-white rounded-[4px] border box-shadow3 texto-centrado"
+                                disabled={!horaDisponible.available}
+                                style={{
+                                    backgroundColor: horaDisponible.available ? '#ffffff' : '#ffffff6b',
+                                    pointerEvents: horaDisponible.available ? 'auto' : 'none'
+                                }}>
+                            </button>
                         </div>
                     </div>
                 ))}
             </div>
         </div>
-        
-        
-
 
         <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}>
             <div className={`${styles.boxWidth}`}>

@@ -6,6 +6,7 @@ import axios from 'axios'
 import swal from 'sweetalert2'
 import { profileIcon } from '../../assets';
 import { useLocalStorage } from '../../hooks/useLocalStorage' 
+import { gymIcon } from '../../assets';
 
 const Profile = () => {
 
@@ -13,33 +14,46 @@ const Profile = () => {
 
     const[tarifa, setTarifa] = useState();
 
+    const[gymReserva, setGymReserva] = useState();
+
+    const[hour, setHour] = useState();
+
     const redirectRates = () => {
         window.location.href = '/rates';
     };
 
     useEffect(() => {
-        const getProfileData = async () => {
-            try {
-                const url = 'http://localhost:8082/tfg/users/searchToken/';
-                const tokenUser = window.localStorage.getItem('token');
-                const urlCompleta = url + tokenUser;
-                const urlSinComillas = urlCompleta.replace(/"/g, '');
-                const response = await axios.get(urlSinComillas);
-                setUsuario(response.data);
-
-                const url2 = 'http://localhost:8082/tfg/rates/searchRateToken/';
-                const tokenUser2 = window.localStorage.getItem('token');
-                const urlCompleta2 = url2 + tokenUser2;
-                const urlSinComillas2 = urlCompleta2.replace(/"/g, '');
-                const response2 = await axios.get(urlSinComillas2);
-                setTarifa(response2.data);
-            } catch (error) {
-                console.log(error);
-            }
-        };
-    
         getProfileData();
     }, []);
+
+    const getProfileData = async () => {
+        try {
+            const url = 'http://localhost:8082/tfg/users/searchToken/';
+            const tokenUser = window.localStorage.getItem('token');
+            const urlCompleta = url + tokenUser;
+            const urlSinComillas = urlCompleta.replace(/"/g, '');
+            const response = await axios.get(urlSinComillas);
+            setUsuario(response.data);
+
+            const url2 = 'http://localhost:8082/tfg/rates/searchRateToken/';
+            const urlCompleta2 = url2 + tokenUser;
+            const urlSinComillas2 = urlCompleta2.replace(/"/g, '');
+            const response2 = await axios.get(urlSinComillas2);
+            setTarifa(response2.data);
+
+            const url3 = 'http://localhost:8082/tfg/gym_bookings/searchGymBookingToday/';
+            const urlCompleta3 = url3 + tokenUser;
+            const urlSinComillas3 = urlCompleta3.replace(/"/g, '');
+            const response3 = await axios.get(urlSinComillas3);
+            setGymReserva(response3.data);
+            const dateString = response3.data[0].date;
+            const date = new Date(dateString);
+            const hour = date.getHours();
+            setHour(hour);
+        } catch (error) {
+            console.log(error);
+        }
+    };
     
     const redirectModifyProfile = () => {
         window.location.href = '/modify-profile';
@@ -266,6 +280,36 @@ const Profile = () => {
                 </div>
             </div>
 
+            {gymReserva && (
+                <div className={`sm:flex-row flex-col `} >
+                    <div className="flex flex-col justify-left items-left">
+                        <div className="text-left"> {/* Contenedor para texto e imagen */}
+                            <h2 className={`${styles.heading2} ml-8`}>
+                                Tu reserva para el gimnasio hoy:
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div className={`${styles.flexCenter} ${styles.padding} sm:flex-row flex-col flex flex-1 gridContainer`}>
+                        <div className={`${styles.flexCenter} bg-black-gradient-2 rounded-[20px] box-shadow flex flex-grow`}>
+                            <img src={gymIcon} alt='gymIcon' className='w-[80px] h-[80px] ml-2 mt-3 sm: mb-8' /> 
+                            
+                            <h2 className={`${styles.heading4} ${styles.flexCenter} text-white`}>
+                                {hour}:00
+                            </h2>
+
+                            <div className={`${styles.flexCenter} sm:flex-row flex-col sm:flex`} >
+                                <button type='button' className={`py-3 px-4 bg-red-gradient font-poppins font-medium text-[18px] 
+                                                    text-primary outline-none ${styles} rounded-[10px] mr-2`} onClick={deleteRate}>
+                                    Cancelar reserva
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}  
+
+
             {tarifa && (
                 <div className={`sm:flex-row flex-col `} >
                     <div className="flex flex-col justify-left items-left">
@@ -302,9 +346,6 @@ const Profile = () => {
                     </div>
                 </div>
             )}
-
-
-            
     
             <div className={`bg-primary ${styles.paddingX} ${styles.flexStart}`}>
                 <div className={`${styles.boxWidth}`}>
