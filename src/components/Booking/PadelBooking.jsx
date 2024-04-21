@@ -9,56 +9,68 @@ import { gymIcon } from '../../assets';
 
 export default function PadelBooking() {
     const[hour, setHour] = useState();
+    const[numCourt, setNumCourt] = useState();
 
     useEffect(() => {
         actionObtenerReservasPadel();
-        actualizarDisponibilidadPadel(horasDisponiblesPadel);
+        actualizarDisponibilidadPadel(horasDisponiblesPadel1, numCourt);
+        actualizarDisponibilidadPadel(horasDisponiblesPadel2, numCourt);
     }, []);
 
-    var horasDisponiblesPadel = [
-        { hora: '09', interval: '09:00 - 11:00', available: true, reserva: false },
-        { hora: '11', interval: '11:00 - 13:00', available: true, reserva: false },
-        { hora: '16', interval: '16:00 - 18:00', available: true, reserva: false },
-        { hora: '18', interval: '18:00 - 20:00', available: true, reserva: false },   
+    var horasDisponiblesPadel1 = [
+        { hora: '09', interval: '09:00 - 11:00', available: true, reserva: false, numCourt: 1  },
+        { hora: '11', interval: '11:00 - 13:00', available: true, reserva: false, numCourt: 1  },
+        { hora: '16', interval: '16:00 - 18:00', available: true, reserva: false, numCourt: 1  },
+        { hora: '18', interval: '18:00 - 20:00', available: true, reserva: false, numCourt: 1  },   
     ];
 
-    function actualizarDisponibilidadPadel(horasDisponiblesPadel) {
+    var horasDisponiblesPadel2 = [
+        { hora: '09', interval: '09:00 - 11:00', available: true, reserva: false, numCourt: 2 },
+        { hora: '11', interval: '11:00 - 13:00', available: true, reserva: false, numCourt: 2  },
+        { hora: '16', interval: '16:00 - 18:00', available: true, reserva: false, numCourt: 2  },
+        { hora: '18', interval: '18:00 - 20:00', available: true, reserva: false, numCourt: 2  },   
+    ];
+
+    function actualizarDisponibilidadPadel(horasDisponiblesPadel1, numCourt) {
         const horaActual = new Date().getHours();
 
-        if(hour){
-            horasDisponiblesPadel.forEach(comprobar => {
-                if(comprobar.hora != hour){
+        if(hour && numCourt){
+            horasDisponiblesPadel1.forEach(comprobar => {
+                if(comprobar.hora != hour && comprobar.numCourt != numCourt){
                     comprobar.available = false;
                 }
-                else {
+                
+                if(comprobar.hora == hour && comprobar.numCourt == numCourt){
                     comprobar.reserva = true;
+                }
+                else{
+                    comprobar.available = false;
                 }
             });
         } else {
-            horasDisponiblesPadel.forEach(comprobar => {
-                if(comprobar.hora == hour){
-                    console.log("here")
+            horasDisponiblesPadel1.forEach(comprobar => {
+                if(comprobar.hora == hour && comprobar.numCourt == numCourt){
                     comprobar.reserva = true;
                 }
                 const horaArray = parseInt(comprobar.hora);
-                comprobar.available = horaArray >= horaActual; 
+                comprobar.available = (parseInt(horaArray) + 1) >= parseInt(horaActual); 
             });
         }
 
-        return horasDisponiblesPadel;
+        return horasDisponiblesPadel1;
     }
 
-    horasDisponiblesPadel = actualizarDisponibilidadPadel(horasDisponiblesPadel);
+    horasDisponiblesPadel1 = actualizarDisponibilidadPadel(horasDisponiblesPadel1, numCourt);
+    horasDisponiblesPadel2 = actualizarDisponibilidadPadel(horasDisponiblesPadel2, numCourt);
     
     
-    const actionReservaPadel = (async (hour) => {
+    const actionReservaPadel = (async (hour, num_court) => {
         try{
             const url = 'http://localhost:8082/tfg/padel_bookings/createPadelBooking/';
             const tokenUser = window.localStorage.getItem('token');
-            const urlCompleta = url + tokenUser + "/" + hour;
+            const urlCompleta = url + tokenUser + "/" + hour + "/" + num_court;
             const urlSinComillas = urlCompleta.replace(/"/g, '');
             const response = await axios.post(urlSinComillas);
-            //console.log(response, horasDisponiblesPadel)
         } catch(error){
             swal.fire({
                 icon: 'error',
@@ -68,7 +80,7 @@ export default function PadelBooking() {
         }
     });
 
-    const doBookingPadel = (hour) => {
+    const doBookingPadel = (hour, num_court) => {
         swal.fire({
             icon: 'info',
             title: "Atención",
@@ -81,7 +93,7 @@ export default function PadelBooking() {
         }).then(response => {
             try {
                 if (response.isConfirmed) {
-                    actionReservaPadel(hour);
+                    actionReservaPadel(hour, num_court);
                     window.location.reload();
                 } else if (response.isDenied) {
                     console.log("No pasó nada");
@@ -113,6 +125,7 @@ export default function PadelBooking() {
             const dateString = response.data[0].date;
             const date = new Date(dateString);
             setHour(parseInt(date.getHours()) - 2);
+            setNumCourt(response.data[0].num_court);
         } catch(error){
             swal.fire({
                 icon: 'error',
@@ -141,9 +154,9 @@ export default function PadelBooking() {
             </div>
         </div>
 
-        <div className={`${styles.flexCenter}`}>
+        <div className={`${styles.flexCenter} sm:flex-row flex-col flex flex-1`}>
             <div className={`${styles.marginY} ${styles.flexRight} ${styles.paragraph} flex flex-col rounded-[20px] box-shadow2 mb-8 sm:mr-4`}>
-                {horasDisponiblesPadel.map((horaDisponible, index) => (
+                {horasDisponiblesPadel1.map((horaDisponible, index) => (
                     <div className={`${styles.flexCenter} flex`} key={index}>
                         <p className={`texto-centrado text-secondary px-4`}>
                             {horaDisponible.interval}
@@ -155,7 +168,29 @@ export default function PadelBooking() {
                                 style={{
                                     backgroundColor: horaDisponible.reserva ? '#00FF00' : (horaDisponible.available ? '#ffffff' : '#ffffff6b'),
                                     pointerEvents: horaDisponible.available ? 'auto' : 'none'
-                                }} onClick={() => doBookingPadel(horaDisponible.hora)}>
+                                }} onClick={() => doBookingPadel(horaDisponible.hora, horaDisponible.numCourt)}>
+                                    {horaDisponible.reserva ? "Reservado ✔️" : ""}
+
+                            </button>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            <div className={`${styles.marginY} ${styles.flexRight} ${styles.paragraph} flex flex-col rounded-[20px] box-shadow2 mb-8 sm:mr-4`}>
+                {horasDisponiblesPadel2.map((horaDisponible, index) => (
+                    <div className={`${styles.flexCenter} flex`} key={index}>
+                        <p className={`texto-centrado text-secondary px-4`}>
+                            {horaDisponible.interval}
+                        </p>
+                            
+                        <div className={`${styles.flexRight} flex flex-grow flex px-4`}>
+                            <button className="button-booking bg-white rounded-[4px] border box-shadow3 texto-centrado text-black"
+                                disabled={!horaDisponible.available}
+                                style={{
+                                    backgroundColor: horaDisponible.reserva ? '#00FF00' : (horaDisponible.available ? '#ffffff' : '#ffffff6b'),
+                                    pointerEvents: horaDisponible.available ? 'auto' : 'none'
+                                }} onClick={() => doBookingPadel(horaDisponible.hora, horaDisponible.numCourt)}>
                                     {horaDisponible.reserva ? "Reservado ✔️" : ""}
 
                             </button>

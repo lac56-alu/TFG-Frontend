@@ -13,6 +13,7 @@ import GymBooking from '../components/Booking/GymBooking'
 import GymBookingAdmin from '../components/Admin/GymBookingAdmin'
 import UserHistoricalGymBookings from '../components/Booking/UserHistoricalGymBookings'
 import PadelBooking from '../components/Booking/PadelBooking'
+import UserHistoricalPadelBookings from '../components/Booking/UserHistoricalPadelBookings'
 
 
 function AppRouter (){
@@ -32,6 +33,7 @@ function AppRouter (){
         <Route path='/gym-booking-admin' element={ <GymBookingAdmin /> } />
         <Route path='/my-historical-gym-bookings' element={ <UserHistoricalGymBookings /> } />
         <Route path='/padel-booking' element={ <PadelBooking /> } />
+        <Route path='/my-historical-padel-bookings' element={ <UserHistoricalPadelBookings /> } />
 
         <Route path='/*' element={ <Navigate to="/"/> } />
     </Routes>

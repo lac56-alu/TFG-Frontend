@@ -6,7 +6,7 @@ import axios from 'axios'
 import swal from 'sweetalert2'
 import { searchIcon } from '../../assets';
 
-export default function UserHistoricalGymBookings() {
+export default function UserHistoricalPadelBookings() {
     const [reservas, setReservas] = useState([]);
     const [busqueda, setBusqueda] = useState('');
 
@@ -17,7 +17,7 @@ export default function UserHistoricalGymBookings() {
     
     const getBookings = async () => {
         try {
-            const url = 'http://localhost:8082/tfg/gym_bookings/searchGymBooking/';
+            const url = 'http://localhost:8082/tfg/padel_bookings/searchPadelBooking/';
             const tokenUser = window.localStorage.getItem('token');
             const urlCompleta = url + tokenUser;
             const urlSinComillas = urlCompleta.replace(/"/g, '');
@@ -43,7 +43,7 @@ export default function UserHistoricalGymBookings() {
 
     const actionDeleteBooking = (async (idBooking) => {
         try{
-            const url = 'http://localhost:8082/tfg/gym_bookings/deleteAdminGymBooking/';
+            const url = 'http://localhost:8082/tfg/padel_bookings/deleteAdminPadelBooking/';
             const tokenUser = window.localStorage.getItem('token');
             const urlCompleta = url + tokenUser + "/" + idBooking.toString();
             const urlSinComillas = urlCompleta.replace(/"/g, '');
@@ -66,7 +66,7 @@ export default function UserHistoricalGymBookings() {
         }
     });
 
-    const deleteGymBooking = (booking) => {
+    const deletePadelBooking = (booking) => {
         swal.fire({
             icon: 'warning',
             title: "Advertencia",
@@ -123,7 +123,7 @@ export default function UserHistoricalGymBookings() {
                 <div className="flex flex-col justify-center items-center">
                     <div className="text-center">
                         <h2 className={`${styles.heading2}`}>
-                            Historial de reservas del gimnasio
+                            Historial de reservas de las pistas de pádel
                         </h2>
                     </div>
                     
