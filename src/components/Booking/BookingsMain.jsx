@@ -14,7 +14,7 @@ function BookingsMain() {
     };
 
     const redirectSportFacilities = () => {
-        window.location.href = '/sport-facilities-booking';
+        window.location.href = '/padel-booking';
     };
 
   return (

@@ -19,6 +19,8 @@ import BookingsMain from './Booking/BookingsMain'
 import GymBooking from './Booking/GymBooking'
 import GymBookingAdmin from './Admin/GymBookingAdmin'
 import UserHistoricalGymBookings from './Booking/UserHistoricalGymBookings'
+import PadelBooking from './Booking/PadelBooking'
+
 
 
 export {
@@ -43,4 +45,5 @@ export {
     GymBooking,
     GymBookingAdmin,
     UserHistoricalGymBookings,
+    PadelBooking,
 };
