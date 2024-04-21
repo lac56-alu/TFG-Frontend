@@ -16,7 +16,7 @@ const Profile = () => {
 
     const[gymReserva, setGymReserva] = useState();
 
-    const[hour, setHour] = useState();
+    const[hourGym, setHourGym] = useState();
 
     const redirectRates = () => {
         window.location.href = '/rates';
@@ -45,11 +45,14 @@ const Profile = () => {
             const urlCompleta3 = url3 + tokenUser;
             const urlSinComillas3 = urlCompleta3.replace(/"/g, '');
             const response3 = await axios.get(urlSinComillas3);
-            setGymReserva(response3.data);
-            const dateString = response3.data[0].date;
-            const date = new Date(dateString);
-            const hour = date.getHours();
-            setHour(hour);
+            console.log("fucking reserva --> ", response3.data)
+            if(response3.data.length > 0){
+                setGymReserva(response3.data);
+                const dateString = response3.data[0].date;
+                const date = new Date(dateString);
+                const hour = parseInt(date.getHours() - 2);
+                setHourGym(hour);
+            }
         } catch (error) {
             console.log(error);
         }
@@ -160,7 +163,65 @@ const Profile = () => {
                 console.error('Error de la API:', error.response.data.errorMessage);
             }
         });
-    };     
+    };
+    
+    const deleteGymBooking = (idDelete) => {
+        swal.fire({
+            icon: 'warning',
+            title: "Advertencia",
+            text: "¿Está seguro que desea cancelar su reserva?",
+            showDenyButton: true,
+            denyButtonText: 'No',
+            showConfirmButton: true,
+            confirmButtonText: 'Si',
+            confirmButtonColor: '#000000'
+        }).then(response => {
+            try {
+                if (response.isConfirmed) {
+                    actionDeleteGymBooking(idDelete);
+                } else if (response.isDenied) {
+                    console.log("No pasó nada");
+                } else {
+                    swal.fire({
+                    icon: 'error',
+                    title: "Error",
+                    text: "Ocurrió algún tipo de error",
+                    })
+                }
+            } catch (error) {
+                swal.fire({
+                    icon: 'error',
+                    title: error.response.data.errorMessage
+                });
+                console.error('Error de la API:', error.response.data.errorMessage);
+            }
+        });
+    };
+
+    const actionDeleteGymBooking = (async (idDelete) => {
+        try{
+            const url = 'http://localhost:8082/tfg/gym_bookings/deleteGymBooking/';
+            const tokenUser = window.localStorage.getItem('token');
+            const urlCompleta = url + tokenUser + "/" + idDelete;
+            const urlSinComillas = urlCompleta.replace(/"/g, '');
+            const response = await axios.delete(urlSinComillas);
+            swal.fire({
+                icon: 'success',
+                title: "¡Reserva cancelada!",
+                text: "Has cancelado tu reserva para hoy del gimnasio con éxito.",
+                showConfirmButton: false,
+                timer: 5000
+            });
+            window.location.reload();
+            
+        } catch(error){
+            swal.fire({
+                icon: 'error',
+                title: error.response.data.errorMessage
+            });
+            console.error('Error de la API:', error.response.data.errorMessage);
+        }
+    });
 
     return (
         <div className="bg-primary w-full overflow-hidden">
@@ -180,7 +241,7 @@ const Profile = () => {
                 </div>
             </div>
     
-            <div className="justify-center items-center h-screen">
+            <div className="justify-center items-center w-full">
                 <div className={`${styles.marginY} ${styles.padding} sm:flex-row flex-col bg-black-gradient-2 
                                 rounded-[20px] box-shadow`} >
                     <div className="flex flex-col justify-center items-center">
@@ -295,12 +356,12 @@ const Profile = () => {
                             <img src={gymIcon} alt='gymIcon' className='w-[80px] h-[80px] ml-2 mt-3 sm: mb-8' /> 
                             
                             <h2 className={`${styles.heading4} ${styles.flexCenter} text-white`}>
-                                {hour}:00
+                                {hourGym}:00
                             </h2>
 
                             <div className={`${styles.flexCenter} sm:flex-row flex-col sm:flex`} >
                                 <button type='button' className={`py-3 px-4 bg-red-gradient font-poppins font-medium text-[18px] 
-                                                    text-primary outline-none ${styles} rounded-[10px] mr-2`} onClick={deleteRate}>
+                                                    text-primary outline-none ${styles} rounded-[10px] mr-2`} onClick={() => deleteGymBooking(gymReserva[0].id)}>
                                     Cancelar reserva
                                 </button>
                             </div>
