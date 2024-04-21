@@ -127,6 +127,16 @@
   );
 }
 
+.bg-histical-gradient {
+  background: linear-gradient(
+    157.81deg,
+    #3384ad 12.19%,
+    #247ca8 29.82%,
+    #257ba6 51.94%,
+    #186991 90.29%
+  );
+}
+
 .bg-discount-gradient {
   background: linear-gradient(125.17deg, #272727 0%, #11101d 100%);
 }

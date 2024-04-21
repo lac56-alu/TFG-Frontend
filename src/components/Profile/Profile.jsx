@@ -419,11 +419,26 @@ const Profile = () => {
                             Eliminar mi cuenta
                         </button>
                     </div>
+                    <div className={`${styles.flexCenter}`}>
+                        <div className={`${styles.flexCenter} sm:flex-row flex-col sm:flex mt-8`} >
+                            <button type='button' className={`py-3 px-4 bg-histical-gradient font-poppins font-medium text-[18px] 
+                                                text-white outline-none ${styles} rounded-[10px] mr-2 mb-2`} onClick={redirectHistoricalGymBookings}>
+                                Historial reservas del gimnasio
+                            </button>
+                        </div>
+
+                        <div className={`${styles.flexCenter} sm:flex-row flex-col sm:flex mt-8`} >
+                            <button type='button' className={`py-3 px-4 bg-histical-gradient font-poppins font-medium text-[18px] 
+                                                text-white outline-none ${styles} rounded-[10px] mr-2 mb-2`} onClick={redirectHistoricalPadelBookings}>
+                                Historial reservas de las instalaciones
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             {gymReserva && (
-                <div className={`sm:flex-row flex-col `} >
+                <div className={`sm:flex-row flex-col mt-4`} >
                     <div className={`${styles.flexCenter} flex-col`}>
                         <div className={`${styles.flexStart} flex flex-col justify-left items-left`}>
                             <div className="text-left"> {/* Contenedor para texto e imagen */}
@@ -452,19 +467,11 @@ const Profile = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={`${styles.flexCenter} flex-col`}>
-                        <div className={`${styles.flexCenter} sm:flex-row flex-col sm:flex mt-8`} >
-                            <button type='button' className={`py-3 px-4 bg-blue-gradient font-poppins font-medium text-[18px] 
-                                                text-primary outline-none ${styles} rounded-[10px] mr-2 mb-2`} onClick={redirectHistoricalGymBookings}>
-                                Ver historial de reservas
-                            </button>
-                        </div>
-                    </div>
                 </div>
             )}  
 
             {padelReserva && (
-                <div className={`sm:flex-row flex-col`} >
+                <div className={`sm:flex-row flex-col mt-4`} >
                     <div className={`${styles.flexCenter} flex-col`}>
                         <div className={`${styles.flexStart} flex flex-col justify-left items-left`}>
                             <div className="text-left">
@@ -498,49 +505,45 @@ const Profile = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={`${styles.flexCenter} flex-col`}>
-                        <div className={`${styles.flexCenter} sm:flex-row flex-col sm:flex mt-8`} >
-                            <button type='button' className={`py-3 px-4 bg-blue-gradient font-poppins font-medium text-[18px] 
-                                                text-primary outline-none ${styles} rounded-[10px] mr-2 mb-2`} onClick={redirectHistoricalPadelBookings}>
-                                Ver historial de reservas
-                            </button>
-                        </div>
-                    </div>
                 </div>
             )}  
 
 
             {tarifa && (
-                <div className={`sm:flex-row flex-col `} >
-                    <div className={`${styles.flexStart} flex flex-col justify-left items-left`}>
-                        <div className="text-left"> {/* Contenedor para texto e imagen */}
-                            <h2 className={`${styles.heading2} ml-8`}>
-                                Tu tarifa actual es:
-                            </h2>
+                <div className={`sm:flex-row flex-col mt-4`} >
+                   <div className={`${styles.flexCenter} flex-col`}>
+                        <div className={`${styles.flexStart} flex flex-col justify-left items-left`}>
+                            <div className="text-left">
+                                <h2 className={`${styles.heading2} ml-8`}>
+                                    Tu tarifa actual es:
+                                </h2>
+                            </div>
                         </div>
                     </div>
 
-                    <div className={`${styles.flexCenter} ${styles.padding} sm:flex-row flex-col flex flex-1 gridContainer`}>
-                        <div className={`${styles.flexCenter} bg-black-gradient-2 rounded-[20px] box-shadow flex flex-col flex-grow`}>
-                            <h2 className={`${styles.heading6} ${styles.flexCenter} text-white`}>
-                                {tarifa.name}
-                            </h2>
+                    <div className={`${styles.flexCenter} flex-col`}>
+                        <div className={`${styles.flexCenter} ${styles.padding} sm:flex-row flex-col flex flex-1 gridContainerBooking`}>
+                            <div className={`${styles.flexCenter} bg-black-gradient-2 rounded-[20px] box-shadow flex flex-col flex-grow`}>
+                                <h2 className={`${styles.heading6} ${styles.flexCenter} text-white mr-4 ml-4`}>
+                                    {tarifa.name}
+                                </h2>
 
-                            <h2 className={`${styles.heading2} ${styles.flexCenter}`}>
-                                {tarifa.value}€
-                                <p className={`${styles.paragraph} ml-2 mb-4`}> /mes</p>
-                            </h2>
+                                <h2 className={`${styles.heading2} ${styles.flexCenter}`}>
+                                    {tarifa.value}€
+                                    <p className={`${styles.paragraph} ml-2 mb-4`}> /mes</p>
+                                </h2>
 
-                            <div className={`${styles.flexCenter} sm:flex-row flex-col sm:flex mt-8`} >
-                                <button type='button' className={`py-3 px-4 bg-blue-gradient font-poppins font-medium text-[18px] 
-                                                    text-primary outline-none ${styles} rounded-[10px] mr-2 mb-2`} onClick={redirectRates}>
-                                    Modificar mi tarifa
-                                </button>
+                                <div className={`${styles.flexCenter} sm:flex-row flex-col sm:flex mt-4`} >
+                                    <button type='button' className={`py-3 px-4 bg-blue-gradient font-poppins font-medium text-[18px] 
+                                                        text-primary outline-none ${styles} rounded-[10px] mr-2 mb-2`} onClick={redirectRates}>
+                                        Modificar mi tarifa
+                                    </button>
 
-                                <button type='button' className={`py-3 px-4 bg-red-gradient font-poppins font-medium text-[18px] 
-                                                    text-primary outline-none ${styles} rounded-[10px] mb-2`} onClick={deleteRate}>
-                                    Eliminar mi tarifa
-                                </button>
+                                    <button type='button' className={`py-3 px-4 bg-red-gradient font-poppins font-medium text-[18px] 
+                                                        text-primary outline-none ${styles} rounded-[10px] mb-4`} onClick={deleteRate}>
+                                        Eliminar mi tarifa
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
