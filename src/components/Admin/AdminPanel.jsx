@@ -2,7 +2,7 @@ import React from 'react'
 import styles from '../../style'
 import Navbar from '../Navbar'
 import Footer from '../Footer'
-import { profileIcon, rateIcon, blogIcon, scheduleIcon } from '../../assets';
+import { profileIcon, rateIcon, bookingIcon, scheduleIcon } from '../../assets';
 
 
 function AdminPanel() {
@@ -14,8 +14,8 @@ function AdminPanel() {
         window.location.href = '/rate-admin'; 
     }
 
-    const redirectBlogAdmin = () =>{
-        window.location.href = '/rates'; 
+    const redirectGymBookingAdmin = () =>{
+        window.location.href = '/gym-booking-admin'; 
     }
 
     const redirectScheduleAdmin = () =>{
@@ -61,12 +61,12 @@ function AdminPanel() {
             </button>
 
             <button className={`${styles.flexCenter} hover:text-secondary bg-black-gradient-2 rounded-[20px] box-shadow flex flex-col flex-grow mb-8 sm:mr-4`}
-                onClick={redirectBlogAdmin}>
+                onClick={redirectGymBookingAdmin}>
                 <p className={`${styles.heading4} ${styles.flexCenter} text-center mt-2 max-w-[90%] hover:text-secondary`}>
-                    Blog
+                    Reservas
                 </p>
                 <div className="text-center"> {/* Contenedor para texto e imagen */}
-                    <img src={blogIcon} alt='blogIcon' className='w-[120px] h-[120px] mt-3 sm: mb-8' /> 
+                    <img src={bookingIcon} alt='blogIcon' className='w-[120px] h-[120px] mt-3 sm: mb-8' /> 
                 </div>
             </button>
 

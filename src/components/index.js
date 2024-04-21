@@ -17,6 +17,8 @@ import UserAdmin from './Admin/UserAdmin'
 import RateAdmin from './Admin/RateAdmin'
 import BookingsMain from './Booking/BookingsMain'
 import GymBooking from './Booking/GymBooking'
+import GymBookingAdmin from './Admin/GymBookingAdmin'
+import UserHistoricalGymBookings from './Booking/UserHistoricalGymBookings'
 
 
 export {
@@ -39,4 +41,6 @@ export {
     RateAdmin,
     BookingsMain,
     GymBooking,
+    GymBookingAdmin,
+    UserHistoricalGymBookings,
 };

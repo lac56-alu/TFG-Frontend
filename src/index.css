@@ -210,6 +210,20 @@
   }
 }
 
+.gridContainerBooking {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 450px; 
+}
+
+@media (max-width: 768px) {
+  .gridContainerBooking {
+    width: 380px; /* Tamaño deseado del contenedor en pantallas pequeñas */
+  }
+}
+
 .gridContainer2 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));

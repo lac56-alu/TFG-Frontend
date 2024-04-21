@@ -223,6 +223,10 @@ const Profile = () => {
         }
     });
 
+    const redirectHistoricalGymBookings = () => {
+        window.location.href = '/my-historical-gym-bookings';
+    };
+
     return (
         <div className="bg-primary w-full overflow-hidden">
             <div className={` ${styles.flexCenter}`}>
@@ -343,7 +347,7 @@ const Profile = () => {
 
             {gymReserva && (
                 <div className={`sm:flex-row flex-col `} >
-                    <div className="flex flex-col justify-left items-left">
+                    <div className={`${styles.flexStart} flex flex-col justify-left items-left`}>
                         <div className="text-left"> {/* Contenedor para texto e imagen */}
                             <h2 className={`${styles.heading2} ml-8`}>
                                 Tu reserva para el gimnasio hoy:
@@ -351,7 +355,7 @@ const Profile = () => {
                         </div>
                     </div>
 
-                    <div className={`${styles.flexCenter} ${styles.padding} sm:flex-row flex-col flex flex-1 gridContainer`}>
+                    <div className={`${styles.flexCenter} ${styles.padding} sm:flex-row flex-col flex flex-1 gridContainerBooking`}>
                         <div className={`${styles.flexCenter} bg-black-gradient-2 rounded-[20px] box-shadow flex flex-grow`}>
                             <img src={gymIcon} alt='gymIcon' className='w-[80px] h-[80px] ml-2 mt-3 sm: mb-8' /> 
                             
@@ -367,16 +371,22 @@ const Profile = () => {
                             </div>
                         </div>
                     </div>
+                    <div className={`${styles.flexCenter} sm:flex-row flex-col sm:flex mt-8`} >
+                        <button type='button' className={`py-3 px-4 bg-blue-gradient font-poppins font-medium text-[18px] 
+                                            text-primary outline-none ${styles} rounded-[10px] mr-2 mb-2`} onClick={redirectHistoricalGymBookings}>
+                            Ver historial de reservas
+                        </button>
+                    </div>
                 </div>
             )}  
 
 
             {tarifa && (
                 <div className={`sm:flex-row flex-col `} >
-                    <div className="flex flex-col justify-left items-left">
+                    <div className={`${styles.flexStart} flex flex-col justify-left items-left`}>
                         <div className="text-left"> {/* Contenedor para texto e imagen */}
                             <h2 className={`${styles.heading2} ml-8`}>
-                                Tu tarifa actual
+                                Tu tarifa actual es:
                             </h2>
                         </div>
                     </div>
