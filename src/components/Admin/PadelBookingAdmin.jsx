@@ -18,7 +18,7 @@ export default function GymBookingAdmin() {
     
     const getBookings = async () => {
         try {
-            const url = 'http://localhost:8082/tfg/gym_bookings/getGymBookingsAdmin/';
+            const url = 'http://localhost:8082/tfg/padel_bookings/getPadelBookingsAdmin/';
             const tokenUser = window.localStorage.getItem('token');
             const urlCompleta = url + tokenUser;
             const urlSinComillas = urlCompleta.replace(/"/g, '');
@@ -59,7 +59,6 @@ export default function GymBookingAdmin() {
 
     const reservasFiltrados = reservas.filter((booking) => {
         const nombreUsuario = users.find((user) => user.id === booking.fk_users)?.name || '';
-        console.log(nombreUsuario)
         const datosReserva = `${booking.id} ${formatDate(booking.date)} ${nombreUsuario}`;
     
         return datosReserva.toLowerCase().includes(busqueda.toLowerCase());
@@ -68,7 +67,7 @@ export default function GymBookingAdmin() {
 
     const actionDeleteBooking = (async (idBooking) => {
         try{
-            const url = 'http://localhost:8082/tfg/gym_bookings/deleteAdminGymBooking/';
+            const url = 'http://localhost:8082/tfg/padel_bookings/deleteAdminPadelBooking/';
             const tokenUser = window.localStorage.getItem('token');
             const urlCompleta = url + tokenUser + "/" + idBooking.toString();
             const urlSinComillas = urlCompleta.replace(/"/g, '');
@@ -91,7 +90,7 @@ export default function GymBookingAdmin() {
         }
     });
 
-    const deleteGymBooking = (booking) => {
+    const deletePadelBooking = (booking) => {
         swal.fire({
             icon: 'warning',
             title: "Advertencia",
@@ -148,7 +147,7 @@ export default function GymBookingAdmin() {
                 <div className="flex flex-col justify-center items-center">
                     <div className="text-center">
                         <h2 className={`${styles.heading2}`}>
-                            Adminstración de reservas de gimnasio
+                            Adminstración de reservas de pistas de pádel
                         </h2>
                     </div>
                     
@@ -178,17 +177,22 @@ export default function GymBookingAdmin() {
                                 {formatDate(booking.date)}
                             </p>
 
+                            <p className={`${styles.paragraph} text-left mt-2 max-w-[90%] mr-2`}>
+                                Pista Nº{booking.num_court}
+                            </p>
+
                             <p className={`${styles.paragraph} text-left mt-2 ml-5 max-w-[90%] mr-4`}>
                                 {users[index]?.name || 'Nombre no encontrado'}
                             </p>
                         </div>
 
-                        <div className={`${styles.flexRight} flex flex-grow`} >
+                        <div className={`${styles.flexCenter} flex flex-grow sm:flex-1 mt-3`} >
                             <button type='button' className={`${styles.flexCenter} py-2 px-4 bg-red-gradient font-poppins font-medium text-[14px] 
-                                                                text-primary outline-none ${styles} rounded-[10px] mb-3 mt-3 mr-3`} onClick={() => deleteGymBooking(booking)}>
-                                Cancelar reserva
+                                                                text-primary outline-none ${styles} rounded-[10px] mt-auto mb-3 mr-3`} onClick={() => deletePadelBooking(booking)}>
+                                X
                             </button>
                         </div>
+
                     </button>
                 ))}
             </div>

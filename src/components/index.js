@@ -21,6 +21,8 @@ import GymBookingAdmin from './Admin/GymBookingAdmin'
 import UserHistoricalGymBookings from './Booking/UserHistoricalGymBookings'
 import PadelBooking from './Booking/PadelBooking'
 import UserHistoricalPadelBookings from './Booking/UserHistoricalPadelBookings'
+import PadelBookingAdmin from './Admin/PadelBookingAdmin'
+
 
 export {
     Navbar,
@@ -46,4 +48,5 @@ export {
     UserHistoricalGymBookings,
     PadelBooking,
     UserHistoricalPadelBookings,
+    PadelBookingAdmin,
 };

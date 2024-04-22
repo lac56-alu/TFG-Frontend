@@ -18,6 +18,10 @@ function AdminPanel() {
         window.location.href = '/gym-booking-admin'; 
     }
 
+    const redirectPadelBookingAdmin = () =>{
+        window.location.href = '/padel-booking-admin'; 
+    }
+
     const redirectScheduleAdmin = () =>{
         window.location.href = '/rates'; 
     }
@@ -63,7 +67,17 @@ function AdminPanel() {
             <button className={`${styles.flexCenter} hover:text-secondary bg-black-gradient-2 rounded-[20px] box-shadow flex flex-col flex-grow mb-8 sm:mr-4`}
                 onClick={redirectGymBookingAdmin}>
                 <p className={`${styles.heading4} ${styles.flexCenter} text-center mt-2 max-w-[90%] hover:text-secondary`}>
-                    Reservas
+                    Reservas gimnasio
+                </p>
+                <div className="text-center"> {/* Contenedor para texto e imagen */}
+                    <img src={bookingIcon} alt='blogIcon' className='w-[120px] h-[120px] mt-3 sm: mb-8' /> 
+                </div>
+            </button>
+
+            <button className={`${styles.flexCenter} hover:text-secondary bg-black-gradient-2 rounded-[20px] box-shadow flex flex-col flex-grow mb-8 sm:mr-4`}
+                onClick={redirectPadelBookingAdmin}>
+                <p className={`${styles.heading4} ${styles.flexCenter} text-center mt-2 max-w-[90%] hover:text-secondary`}>
+                    Reservas padel
                 </p>
                 <div className="text-center"> {/* Contenedor para texto e imagen */}
                     <img src={bookingIcon} alt='blogIcon' className='w-[120px] h-[120px] mt-3 sm: mb-8' /> 

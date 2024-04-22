@@ -62,7 +62,8 @@ const Profile = () => {
             const urlSinComillas4 = urlCompleta4.replace(/"/g, '');
             const response4 = await axios.get(urlSinComillas4);
             if(response4.data.length > 0){
-                setPadelReserva(response4.data);
+                setPadelReserva(response4.data[0]);
+                console.log(padelReserva)
                 const dateString = response4.data[0].date;
                 const date = new Date(dateString);
                 const hour = parseInt(date.getHours() - 2);
