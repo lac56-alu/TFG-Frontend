@@ -15,6 +15,13 @@ import Rates from './Rate/Rates'
 import AdminPanel from './Admin/AdminPanel'
 import UserAdmin from './Admin/UserAdmin'
 import RateAdmin from './Admin/RateAdmin'
+import BookingsMain from './Booking/BookingsMain'
+import GymBooking from './Booking/GymBooking'
+import GymBookingAdmin from './Admin/GymBookingAdmin'
+import UserHistoricalGymBookings from './Booking/UserHistoricalGymBookings'
+import PadelBooking from './Booking/PadelBooking'
+import UserHistoricalPadelBookings from './Booking/UserHistoricalPadelBookings'
+import PadelBookingAdmin from './Admin/PadelBookingAdmin'
 
 
 export {
@@ -35,4 +42,11 @@ export {
     AdminPanel,
     UserAdmin,
     RateAdmin,
+    BookingsMain,
+    GymBooking,
+    GymBookingAdmin,
+    UserHistoricalGymBookings,
+    PadelBooking,
+    UserHistoricalPadelBookings,
+    PadelBookingAdmin,
 };

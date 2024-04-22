@@ -30,6 +30,9 @@ import rateIcon from "./rateIcon.png";
 import blogIcon from "./blogIcon.png";
 import scheduleIcon from "./scheduleIcon.png";
 import searchIcon from "./searchIcon.png";
+import gymIcon from "./gym.png";
+import instalacionesIcon from "./instalaciones.png";
+import bookingIcon from "./bookingIcon.png";
 
 export {
   airbnb,
@@ -64,4 +67,7 @@ export {
   blogIcon,
   scheduleIcon,
   searchIcon,
+  gymIcon,
+  instalacionesIcon,
+  bookingIcon,
 };

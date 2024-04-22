@@ -21,6 +21,12 @@
     #6d6d6d -78.47%,
     #306de62a 91.61%
   );
+  --green-gradient: linear-gradient(
+    144.39deg,
+    #57d764 -278.56%,
+    #4cc659 -78.47%,
+    #30d841 91.61%
+  );
   --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
 }
 
@@ -111,11 +117,35 @@
   );
 }
 
+.bg-green-gradient {
+  background: linear-gradient(
+    157.81deg,
+    #45a05c 12.19%,
+    #3d9e55 29.82%,
+    #22ac44 51.94%,
+    #0fa835 90.29%
+  );
+}
+
+.bg-histical-gradient {
+  background: linear-gradient(
+    157.81deg,
+    #3384ad 12.19%,
+    #247ca8 29.82%,
+    #257ba6 51.94%,
+    #186991 90.29%
+  );
+}
+
 .bg-discount-gradient {
   background: linear-gradient(125.17deg, #272727 0%, #11101d 100%);
 }
 
 .box-shadow {
+  box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+}
+
+.box-shadow2 {
   box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
 }
 
@@ -190,6 +220,20 @@
   }
 }
 
+.gridContainerBooking {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 650px; 
+}
+
+@media (max-width: 768px) {
+  .gridContainerBooking {
+    width: 500px; /* Tamaño deseado del contenedor en pantallas pequeñas */
+  }
+}
+
 .gridContainer2 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
@@ -218,5 +262,28 @@
 .box-shadow:hover {
   background: var(--blue-gradient);
 }
+
+.box-shadow3:hover {
+  background: var(--green-gradient);
+}
+
+.button-booking {
+  width: 550px; 
+  height: 50px; 
+}
+
+@media (max-width: 768px) {
+  .button-booking {
+    width: 250px; 
+  }
+}
+
+.texto-centrado {
+  display: flex;
+  justify-content: space-around; 
+  flex-direction: column;
+  align-items: center;
+}
+
 
 

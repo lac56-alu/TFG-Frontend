@@ -8,6 +8,14 @@ import Rates from '../components/Rate/Rates'
 import AdminPanel from '../components/Admin/AdminPanel'
 import UserAdmin from '../components/Admin/UserAdmin'
 import RateAdmin from '../components/Admin/RateAdmin'
+import BookingsMain from '../components/Booking/BookingsMain'
+import GymBooking from '../components/Booking/GymBooking'
+import GymBookingAdmin from '../components/Admin/GymBookingAdmin'
+import UserHistoricalGymBookings from '../components/Booking/UserHistoricalGymBookings'
+import PadelBooking from '../components/Booking/PadelBooking'
+import UserHistoricalPadelBookings from '../components/Booking/UserHistoricalPadelBookings'
+import PadelBookingAdmin from '../components/Admin/PadelBookingAdmin'
+
 
 function AppRouter (){
   return (
@@ -21,6 +29,14 @@ function AppRouter (){
         <Route path='/adminpanel' element={ <AdminPanel /> } />
         <Route path='/user-admin' element={ <UserAdmin /> } />
         <Route path='/rate-admin' element={ <RateAdmin /> } />
+        <Route path='/booking' element={ <BookingsMain /> } />
+        <Route path='/gym-booking' element={ <GymBooking /> } />
+        <Route path='/gym-booking-admin' element={ <GymBookingAdmin /> } />
+        <Route path='/my-historical-gym-bookings' element={ <UserHistoricalGymBookings /> } />
+        <Route path='/padel-booking' element={ <PadelBooking /> } />
+        <Route path='/my-historical-padel-bookings' element={ <UserHistoricalPadelBookings /> } />
+        <Route path='/padel-booking-admin' element={ <PadelBookingAdmin /> } />
+
 
         <Route path='/*' element={ <Navigate to="/"/> } />
     </Routes>
