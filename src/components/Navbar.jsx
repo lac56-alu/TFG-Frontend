@@ -1,25 +1,72 @@
-import {useState, userState } from 'react'
+import {useState, useEffect } from 'react'
 import { close, logoElement2, menu } from '../assets';
 import {navLinks} from '../constants'
 import { useLocalStorage } from '../hooks/useLocalStorage' 
+import axios from 'axios'
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+
+  const [isAdmin, setIsAdmin] = useState(null);
 
   const redirectHome = () => {
     window.location.href="/";
   }
 
+  const checkAdminNavbar = async () => {
+    try {
+      const token = window.localStorage.getItem('token');
+      //console.log("TOKEN --> ", token);
+      if (token) {
+        //console.log("ENTRA");
+        const url = 'http://localhost:8082/tfg/users/userType/';
+        const urlCompleta = url + token;
+        const urlSinComillas = urlCompleta.replace(/"/g, '');
+        const response = await axios.get(urlSinComillas);
+        //console.log(response.data.comprobar);
+        return response.data.comprobar;
+      } else {
+        return false;
+      }
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  };
+
+  const getAdminState = async () => {
+    try {
+      const isAdmin = await checkAdminNavbar();
+      return isAdmin;
+    } catch (error) {
+      console.error('Error al verificar el estado:', error);
+      return false;
+    }
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const adminState = await getAdminState(); 
+      setIsAdmin(adminState); 
+    };
+
+    fetchData(); 
+  }, []);
+
   return (
     <nav className='w-full flex py-3 justify-between items-left navbar'>
       <img src={logoElement2} alt='logoElement' onClick={redirectHome} className='w-[120px] h-[85px] flex flex-start ' />
-      {/*Crear el menu contenedor de los links de la navBar*/}
       <ul className='list-none sm:flex hidden justify-end items-center flex-1'>
       {navLinks.map((nav, index) => {
-        if (nav.id == 'login' && window.localStorage.getItem('token')) {
+        if (nav.id == 'adminPanel' && window.localStorage.getItem('token') && !isAdmin) {
+          return null;
+        } 
+
+        if ((nav.id == 'login' || nav.id == 'registro') && window.localStorage.getItem('token')) {
           return null;
         }
-        if ((nav.id == 'logout' || nav.id == 'perfil' || nav.id == 'adminPanel') && !window.localStorage.getItem('token')) {
+        
+        if ((nav.id == 'logout' || nav.id == 'perfil' || nav.id == 'reservas' || nav.id == 'adminPanel') && !window.localStorage.getItem('token')) {
           return null;
         }
         return (
@@ -55,10 +102,15 @@ const Navbar = () => {
         <div className={`${toggle ? 'flex' : 'hidden'} p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[280px] rounded-[10px] sidebar`}>
           <ul className='list-none flex-col justify_end items-center flex-1'>
             { navLinks.map((nav, index) => {
-              if (nav.id == 'login' && window.localStorage.getItem('token')) {
+              if (nav.id == 'adminPanel' && window.localStorage.getItem('token') && !isAdmin) {
+                return null;
+              } 
+
+              if ((nav.id == 'login' || nav.id == 'registro') && window.localStorage.getItem('token')) {
                 return null;
               }
-              if ((nav.id == 'logout' || nav.id == 'perfil') && !window.localStorage.getItem('token')) {
+              
+              if ((nav.id == 'logout' || nav.id == 'perfil' || nav.id == 'reservas' || nav.id == 'adminPanel') && !window.localStorage.getItem('token')) {
                 return null;
               }
               return (

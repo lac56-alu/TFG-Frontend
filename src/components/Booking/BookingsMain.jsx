@@ -29,7 +29,7 @@ function BookingsMain() {
                 <div className="flex flex-col justify-center items-center">
                     <div className="text-center"> {/* Contenedor para texto e imagen */}
                         <h2 className={`${styles.heading2}`}>
-                            Reserva
+                            Reservas
                         </h2>
                     </div>
                 </div>

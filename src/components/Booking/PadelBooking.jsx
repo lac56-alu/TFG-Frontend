@@ -156,6 +156,9 @@ export default function PadelBooking() {
 
         <div className={`${styles.flexCenter} sm:flex-row flex-col flex flex-1`}>
             <div className={`${styles.marginY} ${styles.flexRight} ${styles.paragraph} flex flex-col rounded-[20px] box-shadow2 mb-8 sm:mr-4`}>
+                <h2 className={`${styles.flexCenter} ${styles.heading4}`}>
+                    Pista Nº1
+                </h2>
                 {horasDisponiblesPadel1.map((horaDisponible, index) => (
                     <div className={`${styles.flexCenter} flex`} key={index}>
                         <p className={`texto-centrado text-secondary px-4`}>
@@ -178,6 +181,9 @@ export default function PadelBooking() {
             </div>
 
             <div className={`${styles.marginY} ${styles.flexRight} ${styles.paragraph} flex flex-col rounded-[20px] box-shadow2 mb-8 sm:mr-4`}>
+                <h2 className={`${styles.flexCenter} ${styles.heading4} text-secondary`}>
+                    Pista Nº2
+                </h2>
                 {horasDisponiblesPadel2.map((horaDisponible, index) => (
                     <div className={`${styles.flexCenter} flex`} key={index}>
                         <p className={`texto-centrado text-secondary px-4`}>
