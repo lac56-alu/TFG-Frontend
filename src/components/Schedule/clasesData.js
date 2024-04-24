@@ -1,6 +1,6 @@
 export const sessionsData = [
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-02-01T09:00:00",
         "end": "2024-02-01T10:30:00",
@@ -70,7 +70,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-02-06T09:00:00",
         "end": "2024-02-06T10:30:00",
@@ -119,7 +119,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-02-08T09:00:00",
         "end": "2024-02-08T10:30:00",
@@ -189,7 +189,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-02-13T09:00:00",
         "end": "2024-02-13T10:30:00",
@@ -238,7 +238,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-02-15T09:00:00",
         "end": "2024-02-15T10:30:00",
@@ -308,7 +308,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-02-20T09:00:00",
         "end": "2024-02-20T10:30:00",
@@ -357,7 +357,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-02-22T09:00:00",
         "end": "2024-02-22T10:30:00",
@@ -427,7 +427,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-02-27T09:00:00",
         "end": "2024-02-27T10:30:00",
@@ -476,7 +476,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-02-29T09:00:00",
         "end": "2024-02-29T10:30:00",
@@ -546,7 +546,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-03-05T09:00:00",
         "end": "2024-03-05T10:30:00",
@@ -595,7 +595,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-03-07T09:00:00",
         "end": "2024-03-07T10:30:00",
@@ -665,7 +665,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-03-12T09:00:00",
         "end": "2024-03-12T10:30:00",
@@ -714,7 +714,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-03-14T09:00:00",
         "end": "2024-03-14T10:30:00",
@@ -784,7 +784,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-03-19T09:00:00",
         "end": "2024-03-19T10:30:00",
@@ -833,7 +833,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-03-21T09:00:00",
         "end": "2024-03-21T10:30:00",
@@ -903,7 +903,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-03-26T09:00:00",
         "end": "2024-03-26T10:30:00",
@@ -952,7 +952,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-03-28T09:00:00",
         "end": "2024-03-28T10:30:00",
@@ -1022,7 +1022,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-04-02T09:00:00",
         "end": "2024-04-02T10:30:00",
@@ -1071,7 +1071,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-04-04T09:00:00",
         "end": "2024-04-04T10:30:00",
@@ -1141,7 +1141,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-04-09T09:00:00",
         "end": "2024-04-09T10:30:00",
@@ -1190,7 +1190,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-04-11T09:00:00",
         "end": "2024-04-11T10:30:00",
@@ -1260,7 +1260,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-04-16T09:00:00",
         "end": "2024-04-16T10:30:00",
@@ -1309,7 +1309,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-04-18T09:00:00",
         "end": "2024-04-18T10:30:00",
@@ -1379,7 +1379,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-04-23T09:00:00",
         "end": "2024-04-23T10:30:00",
@@ -1428,7 +1428,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-04-25T09:00:00",
         "end": "2024-04-25T10:30:00",
@@ -1498,7 +1498,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-04-30T09:00:00",
         "end": "2024-04-30T10:30:00",
@@ -1547,7 +1547,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-05-02T09:00:00",
         "end": "2024-05-02T10:30:00",
@@ -1617,7 +1617,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-05-07T09:00:00",
         "end": "2024-05-07T10:30:00",
@@ -1666,7 +1666,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-05-09T09:00:00",
         "end": "2024-05-09T10:30:00",
@@ -1736,7 +1736,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-05-14T09:00:00",
         "end": "2024-05-14T10:30:00",
@@ -1785,7 +1785,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-05-16T09:00:00",
         "end": "2024-05-16T10:30:00",
@@ -1855,7 +1855,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-05-21T09:00:00",
         "end": "2024-05-21T10:30:00",
@@ -1904,7 +1904,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-05-23T09:00:00",
         "end": "2024-05-23T10:30:00",
@@ -1974,7 +1974,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-05-28T09:00:00",
         "end": "2024-05-28T10:30:00",
@@ -2023,7 +2023,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-05-30T09:00:00",
         "end": "2024-05-30T10:30:00",
@@ -2093,7 +2093,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-06-04T09:00:00",
         "end": "2024-06-04T10:30:00",
@@ -2142,7 +2142,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-06-06T09:00:00",
         "end": "2024-06-06T10:30:00",
@@ -2212,7 +2212,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-06-11T09:00:00",
         "end": "2024-06-11T10:30:00",
@@ -2261,7 +2261,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-06-13T09:00:00",
         "end": "2024-06-13T10:30:00",
@@ -2331,7 +2331,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-06-18T09:00:00",
         "end": "2024-06-18T10:30:00",
@@ -2380,7 +2380,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-06-20T09:00:00",
         "end": "2024-06-20T10:30:00",
@@ -2450,7 +2450,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-06-25T09:00:00",
         "end": "2024-06-25T10:30:00",
@@ -2499,7 +2499,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-06-27T09:00:00",
         "end": "2024-06-27T10:30:00",
@@ -2569,7 +2569,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-07-02T09:00:00",
         "end": "2024-07-02T10:30:00",
@@ -2618,7 +2618,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-07-04T09:00:00",
         "end": "2024-07-04T10:30:00",
@@ -2688,7 +2688,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-07-09T09:00:00",
         "end": "2024-07-09T10:30:00",
@@ -2737,7 +2737,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-07-11T09:00:00",
         "end": "2024-07-11T10:30:00",
@@ -2807,7 +2807,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-07-16T09:00:00",
         "end": "2024-07-16T10:30:00",
@@ -2856,7 +2856,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-07-18T09:00:00",
         "end": "2024-07-18T10:30:00",
@@ -2926,7 +2926,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-07-23T09:00:00",
         "end": "2024-07-23T10:30:00",
@@ -2975,7 +2975,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-07-25T09:00:00",
         "end": "2024-07-25T10:30:00",
@@ -3045,7 +3045,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-07-30T09:00:00",
         "end": "2024-07-30T10:30:00",
@@ -3094,7 +3094,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-08-01T09:00:00",
         "end": "2024-08-01T10:30:00",
@@ -3164,7 +3164,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-08-06T09:00:00",
         "end": "2024-08-06T10:30:00",
@@ -3213,7 +3213,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-08-08T09:00:00",
         "end": "2024-08-08T10:30:00",
@@ -3283,7 +3283,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-08-13T09:00:00",
         "end": "2024-08-13T10:30:00",
@@ -3332,7 +3332,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-08-15T09:00:00",
         "end": "2024-08-15T10:30:00",
@@ -3402,7 +3402,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-08-20T09:00:00",
         "end": "2024-08-20T10:30:00",
@@ -3451,7 +3451,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-08-22T09:00:00",
         "end": "2024-08-22T10:30:00",
@@ -3521,7 +3521,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-08-27T09:00:00",
         "end": "2024-08-27T10:30:00",
@@ -3570,7 +3570,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-08-29T09:00:00",
         "end": "2024-08-29T10:30:00",
@@ -3640,7 +3640,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-09-03T09:00:00",
         "end": "2024-09-03T10:30:00",
@@ -3689,7 +3689,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-09-05T09:00:00",
         "end": "2024-09-05T10:30:00",
@@ -3759,7 +3759,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-09-10T09:00:00",
         "end": "2024-09-10T10:30:00",
@@ -3808,7 +3808,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-09-12T09:00:00",
         "end": "2024-09-12T10:30:00",
@@ -3878,7 +3878,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-09-17T09:00:00",
         "end": "2024-09-17T10:30:00",
@@ -3927,7 +3927,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-09-19T09:00:00",
         "end": "2024-09-19T10:30:00",
@@ -3997,7 +3997,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-09-24T09:00:00",
         "end": "2024-09-24T10:30:00",
@@ -4046,7 +4046,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-09-26T09:00:00",
         "end": "2024-09-26T10:30:00",
@@ -4116,7 +4116,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-10-01T09:00:00",
         "end": "2024-10-01T10:30:00",
@@ -4165,7 +4165,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-10-03T09:00:00",
         "end": "2024-10-03T10:30:00",
@@ -4235,7 +4235,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-10-08T09:00:00",
         "end": "2024-10-08T10:30:00",
@@ -4284,7 +4284,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-10-10T09:00:00",
         "end": "2024-10-10T10:30:00",
@@ -4354,7 +4354,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-10-15T09:00:00",
         "end": "2024-10-15T10:30:00",
@@ -4403,7 +4403,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-10-17T09:00:00",
         "end": "2024-10-17T10:30:00",
@@ -4473,7 +4473,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-10-22T09:00:00",
         "end": "2024-10-22T10:30:00",
@@ -4522,7 +4522,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-10-24T09:00:00",
         "end": "2024-10-24T10:30:00",
@@ -4592,7 +4592,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-10-29T09:00:00",
         "end": "2024-10-29T10:30:00",
@@ -4641,7 +4641,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-10-31T09:00:00",
         "end": "2024-10-31T10:30:00",
@@ -4711,7 +4711,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-11-05T09:00:00",
         "end": "2024-11-05T10:30:00",
@@ -4760,7 +4760,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-11-07T09:00:00",
         "end": "2024-11-07T10:30:00",
@@ -4830,7 +4830,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-11-12T09:00:00",
         "end": "2024-11-12T10:30:00",
@@ -4879,7 +4879,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-11-14T09:00:00",
         "end": "2024-11-14T10:30:00",
@@ -4949,7 +4949,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-11-19T09:00:00",
         "end": "2024-11-19T10:30:00",
@@ -4998,7 +4998,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-11-21T09:00:00",
         "end": "2024-11-21T10:30:00",
@@ -5068,7 +5068,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-11-26T09:00:00",
         "end": "2024-11-26T10:30:00",
@@ -5117,7 +5117,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-11-28T09:00:00",
         "end": "2024-11-28T10:30:00",
@@ -5187,7 +5187,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-12-03T09:00:00",
         "end": "2024-12-03T10:30:00",
@@ -5236,7 +5236,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-12-05T09:00:00",
         "end": "2024-12-05T10:30:00",
@@ -5306,7 +5306,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-12-10T09:00:00",
         "end": "2024-12-10T10:30:00",
@@ -5355,7 +5355,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-12-12T09:00:00",
         "end": "2024-12-12T10:30:00",
@@ -5425,7 +5425,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-12-17T09:00:00",
         "end": "2024-12-17T10:30:00",
@@ -5474,7 +5474,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-12-19T09:00:00",
         "end": "2024-12-19T10:30:00",
@@ -5544,7 +5544,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-12-24T09:00:00",
         "end": "2024-12-24T10:30:00",
@@ -5593,7 +5593,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-12-26T09:00:00",
         "end": "2024-12-26T10:30:00",
@@ -5663,7 +5663,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2024-12-31T09:00:00",
         "end": "2024-12-31T10:30:00",
@@ -5712,7 +5712,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2025-01-02T09:00:00",
         "end": "2025-01-02T10:30:00",
@@ -5782,7 +5782,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2025-01-07T09:00:00",
         "end": "2025-01-07T10:30:00",
@@ -5831,7 +5831,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2025-01-09T09:00:00",
         "end": "2025-01-09T10:30:00",
@@ -5901,7 +5901,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2025-01-14T09:00:00",
         "end": "2025-01-14T10:30:00",
@@ -5950,7 +5950,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2025-01-16T09:00:00",
         "end": "2025-01-16T10:30:00",
@@ -6020,7 +6020,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2025-01-21T09:00:00",
         "end": "2025-01-21T10:30:00",
@@ -6069,7 +6069,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2025-01-23T09:00:00",
         "end": "2025-01-23T10:30:00",
@@ -6139,7 +6139,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2025-01-28T09:00:00",
         "end": "2025-01-28T10:30:00",
@@ -6188,7 +6188,7 @@ export const sessionsData = [
         "color": "coral"
     },
     {
-        "title": "Clase Spinning",
+        "title": "Clase Zumba",
         "monitor": "Adrián",
         "start": "2025-01-30T09:00:00",
         "end": "2025-01-30T10:30:00",

@@ -55,6 +55,7 @@ export default function Schedule() {
         ],
     };
       
+    /*
     const generarEventosAnuales = () => {
         const eventosAnuales = [];
         const fechaInicial = new Date(Date.UTC(2024, 1, 1)); // Fecha inicial en UTC
@@ -91,7 +92,7 @@ export default function Schedule() {
     };
       
     const eventosSemanales = generarEventosAnuales();
-          
+    */
 
     const slotLabelContent = (arg) => {
         const date = new Date(arg.date);
@@ -118,9 +119,9 @@ export default function Schedule() {
             </div>
         </div>
 
-        <div className={`${styles.marginY} text-white`}>
+        <div className={`${styles.marginY} text-white font-poppins`}>
             <FullCalendar
-                plugins={[ dayGridPlugin, timeGridPlugin ]}
+                plugins={[ dayGridPlugin, timeGridPlugin, interactionPlugin ]}
                 timeZone= 'UTC'
                 locale= 'es'
                 height={800}

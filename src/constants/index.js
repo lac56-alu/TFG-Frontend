@@ -17,14 +17,14 @@ export const navLinks = [
     title: "Horario",
   },
   {
-    id: "blog",
-    href: "/blog",
-    title: "Blog",
-  },
-  {
     id: "login",
     href: "/login",
     title: "Log In",
+  },
+  {
+    id: "registro",
+    href: "/register",
+    title: "¡Registráte!",
   },
   {
     id: "perfil",

@@ -34,6 +34,10 @@ export default function Rates() {
     });
 
     const selectRate = (idRate) => {
+        const tokenUser = window.localStorage.getItem('token');
+        if(!tokenUser){
+            window.location.href = '/login';
+        }
         swal.fire({
             icon: 'info',
             title: "Atención",
