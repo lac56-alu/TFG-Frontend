@@ -442,9 +442,23 @@
   background-color: #2f66d5; /* Color de fondo del evento */
   color: #fff; /* Color del texto del evento */
   font-size: 20px;
-  border-color: #306CE6; /* Color del borde del evento */
+  border-color: #306CE6; 
 }
 
+.event-content {
+  position: relative;
+  height: auto !important;
+}
+
+.event-content > div {
+  overflow: hidden;
+  white-space: nowrap;
+  
+}
+
+.fc-time-grid-event {
+  height: auto !important;
+}
 
 
 

@@ -2,7 +2,7 @@ import styles from '../../style'
 import Navbar from '../Navbar'
 import Footer from '../Footer'
 import { useEffect, useState } from 'react'
-import { sessionsData } from './sessionsData'
+import { sessionsData } from './clasesData'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid' 
 import interactionPlugin from "@fullcalendar/interaction"
@@ -25,11 +25,73 @@ export default function Schedule() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const eventosSemanales = [
-        { title: 'Clase Pilates', start: '2024-04-24T09:00:00', end: '2024-04-24T12:00:00' },
-        { title: 'Clase Yoga', start: '2024-04-24T18:00:00', end: '2024-04-24T19:00:00' },
-        { title: 'Clase Capoeira', start: '2024-04-25T13:00:00', end: '2024-04-24T14:00:00' },
-    ];
+    const clasesPorDia = {
+        'Monday': [
+          { title: 'Clase Fitness', monitor: 'Juanjo', start: '09:00', end: '10:30', color: 'blue' },
+          { title: 'Clase Yoga', monitor: 'Antonio', start: '11:00', end: '12:00', color: 'green' },
+          { title: 'Clase Funcional', monitor: 'Paula', start: '18:00', end: '19:30', color: 'coral' },
+        ],
+        'Tuesday': [
+          { title: 'Clase Spinning', monitor: 'Adrián', start: '09:00', end: '10:30', color: 'salmon' },
+          { title: 'Clase HIIT', monitor: 'Fran', start: '11:00', end: '12:00', color: 'red' },
+          { title: 'Clase Pilates', monitor: 'Noe', start: '18:00', end: '19:30', color: 'brown' },
+          { title: 'Clase GAP', monitor: 'Paula', start: '16:00', end: '17:30', color: 'gray' },
+        ],
+        'Wednesday': [
+          { title: 'Clase Fitness', monitor: 'Juanjo', start: '09:00', end: '10:30', color: 'blue' },
+          { title: 'Clase Yoga', monitor: 'Antonio', start: '11:00', end: '12:00', color: 'green' },
+          { title: 'Clase Funcional', monitor: 'Paula', start: '18:00', end: '19:30', color: 'coral' },
+        ],
+        'Thursday': [
+          { title: 'Clase Spinning', monitor: 'Adrián', start: '09:00', end: '10:30', color: 'salmon' },
+          { title: 'Clase HIIT', monitor: 'Fran', start: '11:00', end: '12:00', color: 'red' },
+          { title: 'Clase Pilates', monitor: 'Noe', start: '18:00', end: '19:30', color: 'brown' },
+          { title: 'Clase GAP', monitor: 'Paula', start: '16:00', end: '17:30', color: 'gray' },
+        ],
+        'Friday': [
+          { title: 'Clase Fitness', monitor: 'Juanjo', start: '09:00', end: '10:30', color: 'blue' },
+          { title: 'Clase Yoga', monitor: 'Antonio', start: '11:00', end: '12:00', color: 'green' },
+          { title: 'Clase Funcional', monitor: 'Paula', start: '18:00', end: '19:30', color: 'coral' },
+        ],
+    };
+      
+    const generarEventosAnuales = () => {
+        const eventosAnuales = [];
+        const fechaInicial = new Date(Date.UTC(2024, 1, 1)); // Fecha inicial en UTC
+        const fechaFinal = new Date(Date.UTC(2024, 12, 31)); // Fecha final en UTC
+      
+        const fechaActual = new Date(fechaInicial);
+        while (fechaActual <= fechaFinal) {
+          try{
+            const diaDeLaSemana = fechaActual.toLocaleDateString('en', { weekday: 'long', timeZone: 'UTC' });
+            const clasesDelDia = clasesPorDia[diaDeLaSemana];
+            if (clasesDelDia) {
+            const eventosDelDia = clasesDelDia.map(clase => ({
+                ...clase,
+                start: fechaActual.toISOString().slice(0, 10) + 'T' + clase.start + ':00',
+                end: fechaActual.toISOString().slice(0, 10) + 'T' + clase.end + ':00',
+            }));
+            eventosAnuales.push(...eventosDelDia);
+            } else {
+                //console.log(`No hay clases definidas para ${diaDeLaSemana}`);
+            }
+          }
+          catch(error){
+            console.log(error)
+          }
+          
+          //console.log("Eventos --> ", eventosDelDia)
+          
+      
+          fechaActual.setDate(fechaActual.getDate() + 1); // Avanzar al siguiente día
+        }
+    
+        console.log(JSON.stringify(eventosAnuales))
+        return JSON.stringify(eventosAnuales);
+    };
+      
+    const eventosSemanales = generarEventosAnuales();
+          
 
     const slotLabelContent = (arg) => {
         const date = new Date(arg.date);
@@ -78,7 +140,15 @@ export default function Schedule() {
                     right: 'timeGridWeek,dayGridDay' // estará normalmente a la derecha. Si RTL, estará a la izquierda
                 }}
                 
-                events={eventosSemanales}
+                events={sessionsData}
+                eventContent={(eventInfo) => {
+                    return (
+                        <div className="event-content">
+                            <div>{eventInfo.timeText}</div>
+                            <div>{eventInfo.event.title} - Monit@r: {eventInfo.event.extendedProps.monitor}</div>
+                        </div>
+                    );
+                }}
                 firstDay={1}
                 initialView={calendarView}
 
