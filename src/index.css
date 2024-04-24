@@ -287,3 +287,164 @@
 
 
 
+
+/* Estilos generales */
+.rbc-btn {
+  color: #fff;
+  font-weight: bold;
+  margin: 0;
+  background-color: #265985;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0.375rem 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.rbc-btn:hover {
+  background-color: #1c476f;
+}
+
+.rbc-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.5);
+}
+
+/* Estilos del calendario */
+.rbc-calendar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.rbc-header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #265985;
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 0;
+}
+
+.rbc-header > a,
+.rbc-header > a:active,
+.rbc-header > a:visited {
+  color: #265985;
+  text-decoration: none;
+}
+
+.rbc-toolbar button {
+  color: #265985;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+
+.rbc-toolbar button:hover {
+  background-color: #f0f0f0;
+}
+
+.rbc-toolbar button:active,
+.rbc-toolbar button.rbc-active {
+  background-color: #e0e0e0;
+}
+
+.rbc-today {
+  background-color: #f0f0f0;
+}
+
+.rbc-time-header-content {
+  border-left: 1px solid #ddd;
+}
+
+.rbc-time-header-cell {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #265985;
+}
+
+.rbc-time-gutter {
+  white-space: nowrap;
+}
+
+.rbc-timeslot-group {
+  border-bottom: 1px solid #ddd;
+}
+
+.rbc-time-content {
+  display: flex;
+  flex: 1;
+  border-top: 2px solid #ddd;
+  overflow-y: auto;
+  position: relative;
+}
+
+.rbc-time-gutter,
+.rbc-header-gutter {
+  flex: none;
+}
+
+.rbc-day-slot {
+  position: relative;
+  min-height: 100px; /* Altura mínima para las celdas del día */
+}
+
+.rbc-event {
+  background-color: #74ad31;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rbc-event:hover {
+  background-color: #5a8d25;
+}
+
+.rbc-row-bg {
+  display: flex;
+  flex-direction: row;
+}
+
+.rbc-day-bg {
+  flex: 1;
+}
+
+.rbc-off-range {
+  color: #999999;
+}
+
+.rbc-off-range-bg {
+  background-color: #f0f0f0;
+}
+
+.rbc-show-more {
+  background-color: #265985;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.rbc-show-more:hover {
+  background-color: #1c476f;
+}
+
+.fc-event {
+  background-color: #2f66d5; /* Color de fondo del evento */
+  color: #fff; /* Color del texto del evento */
+  font-size: 20px;
+  border-color: #306CE6; /* Color del borde del evento */
+}
+
+
+
+

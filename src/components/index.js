@@ -22,6 +22,7 @@ import UserHistoricalGymBookings from './Booking/UserHistoricalGymBookings'
 import PadelBooking from './Booking/PadelBooking'
 import UserHistoricalPadelBookings from './Booking/UserHistoricalPadelBookings'
 import PadelBookingAdmin from './Admin/PadelBookingAdmin'
+import Schedule from './Schedule/Schedule'
 
 
 export {
@@ -49,4 +50,5 @@ export {
     PadelBooking,
     UserHistoricalPadelBookings,
     PadelBookingAdmin,
+    Schedule,
 };

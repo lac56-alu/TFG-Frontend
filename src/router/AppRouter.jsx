@@ -15,6 +15,7 @@ import UserHistoricalGymBookings from '../components/Booking/UserHistoricalGymBo
 import PadelBooking from '../components/Booking/PadelBooking'
 import UserHistoricalPadelBookings from '../components/Booking/UserHistoricalPadelBookings'
 import PadelBookingAdmin from '../components/Admin/PadelBookingAdmin'
+import Schedule from '../components/Schedule/Schedule'
 
 
 function AppRouter (){
@@ -36,6 +37,7 @@ function AppRouter (){
         <Route path='/padel-booking' element={ <PadelBooking /> } />
         <Route path='/my-historical-padel-bookings' element={ <UserHistoricalPadelBookings /> } />
         <Route path='/padel-booking-admin' element={ <PadelBookingAdmin /> } />
+        <Route path='/schedule' element={ <Schedule /> } />
 
 
         <Route path='/*' element={ <Navigate to="/"/> } />

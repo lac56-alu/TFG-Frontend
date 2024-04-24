@@ -13,7 +13,7 @@ export const navLinks = [
   },
   {
     id: "horario",
-    href: "/horario",
+    href: "/schedule",
     title: "Horario",
   },
   {
