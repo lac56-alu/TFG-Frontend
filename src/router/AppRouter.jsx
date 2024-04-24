@@ -24,14 +24,11 @@ function AppRouter (){
   const checkAdmin = async () => {
     try {
       const token = window.localStorage.getItem('token');
-      console.log("TOKEN --> ", token);
       if (token) {
-        console.log("ENTRA");
         const url = 'http://localhost:8082/tfg/users/userType/';
         const urlCompleta = url + token;
         const urlSinComillas = urlCompleta.replace(/"/g, '');
         const response = await axios.get(urlSinComillas);
-        console.log(response.data.comprobar);
         return response.data.comprobar;
       } else {
         return false;
