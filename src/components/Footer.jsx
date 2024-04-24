@@ -1,6 +1,9 @@
 import styles from "../style"
 import { logoElement2 } from '../assets'
 import { footerLinks, socialMedia } from '../constants'
+import { Link } from 'react-router-dom';
+
+
 
 const Footer = () => (
   <section className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
@@ -15,7 +18,11 @@ const Footer = () => (
               {footerLink.links.map((link, index) => (
                 <li key={link.name} className={`font-poppins font-normal text-[16px] leading-[24px] text-dimWhite 
                                                 hover:text-secondary cursor-pointer mb-3`}> 
-                  {link.name}
+                  {link.external ? (
+                    <Link to={link.url} target="_blank" rel="noopener noreferrer">{link.name}</Link>
+                  ) : (
+                    <span>{link.name}</span>
+                  )}
                 </li>
               ))}
             </ul>

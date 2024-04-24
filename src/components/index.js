@@ -23,6 +23,12 @@ import PadelBooking from './Booking/PadelBooking'
 import UserHistoricalPadelBookings from './Booking/UserHistoricalPadelBookings'
 import PadelBookingAdmin from './Admin/PadelBookingAdmin'
 import Schedule from './Schedule/Schedule'
+import AccessPlatform from './FooterPages/AccessPlatform'
+import ColaboPage from './FooterPages/ColaboPage'
+import FAQ from './FooterPages/FAQ'
+import PrivacityPage from './FooterPages/PrivacityPage'
+import UseConditions from './FooterPages/UseConditions'
+import WorkWithUs from './FooterPages/WorkWithUs'
 
 
 export {
@@ -51,4 +57,10 @@ export {
     UserHistoricalPadelBookings,
     PadelBookingAdmin,
     Schedule,
+    AccessPlatform,
+    ColaboPage,
+    FAQ,
+    PrivacityPage,
+    UseConditions,
+    WorkWithUs,
 };

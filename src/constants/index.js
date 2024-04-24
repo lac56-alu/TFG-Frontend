@@ -88,17 +88,18 @@ export const feedback = [
   },
 ];
 
+
 export const footerLinks = [
   {
     title: "Ayuda",
     links: [
       {
         name: "Aceso a la plataforma",
-        link: "https://www.hoobank.com/content/",
+        link: "/access-platform",
       },
       {
         name: "Preguntas Frecuentes FAQ",
-        link: "https://www.hoobank.com/how-it-works/",
+        link: "/faq",
       },
     ],
   },
@@ -107,19 +108,19 @@ export const footerLinks = [
     links: [
       {
         name: "Colaboraciones",
-        link: "https://www.hoobank.com/help-center/",
+        link: "/colabo-page",
       },
       {
         name: "Trabajar en Element",
-        link: "https://www.hoobank.com/partners/",
+        link: "/work-with-us",
       },
       {
         name: "Política de privacidad",
-        link: "https://www.hoobank.com/suggestions/",
+        link: "/privacity-pag",
       },
       {
         name: "Condiciones de uso",
-        link: "https://www.hoobank.com/blog/",
+        link: "/use-condition",
       }
     ],
   },
@@ -128,27 +129,33 @@ export const footerLinks = [
     links: [
       {
         name: "Instagram",
-        link: "https://www.instagram.com",
+        link: "http://www.instagram.com/",
+        external: true,
       },
       {
         name: "Twitter",
         link: "https://www.twitter.com",
+        external: true,
       },
       {
         name: "Facebook",
         link: "https://www.facebook.com",
+        external: true,
       },
       {
         name: "Pinterest",
         link: "https://www.pinterest.com",
+        external: true,
       },
       {
         name: "Linkedin",
         link: "https://www.linkedin.com",
+        external: true,
       },
     ],
   },
 ];
+
 
 export const socialMedia = [
   {
