@@ -3,6 +3,8 @@ import { close, logoElement2, menu } from '../assets';
 import {navLinks} from '../constants'
 import { useLocalStorage } from '../hooks/useLocalStorage' 
 import axios from 'axios'
+import CookieConsent, { Cookies } from "react-cookie-consent";
+import styles from '../style';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -53,8 +55,40 @@ const Navbar = () => {
     fetchData(); 
   }, []);
 
+  const [expanded, setExpanded] = useState(false);
+
+    const toggleExpand = () => {
+      setExpanded(!expanded);
+    };
+
   return (
     <nav className='w-full flex py-3 justify-between items-left navbar'>
+      <CookieConsent
+          location="bottom"
+          buttonText="Aceptar cookies"
+          cookieName="ElementGym Cookie"
+          style={{ background: "#ffffff", color: "#000000" }}
+          buttonStyle={{ background: "#F8FC10", color: "#000000", fontSize: "20px" }}
+          expires={150}
+        >
+          <h2 className={`${styles.flexLeft} ${styles.heading4} textBlack`}>
+            Gestionar consentimiento de las cookies
+          </h2>
+          <div>
+            <p style={{ maxHeight: expanded ? 'none' : '100px', overflow: 'hidden' }}>
+              Para ofrecer las mejores experiencias, utilizamos tecnologías como las cookies para almacenar y/o acceder a la información del dispositivo. <br />
+              El consentimiento de estas tecnologías nos permitirá procesar datos como el comportamiento de navegación o las identificaciones únicas en este sitio. <br />
+              No consentir o retirar el consentimiento, puede afectar negativamente a ciertas características y funciones... <br />
+            </p>
+            {!expanded && (
+              <button onClick={toggleExpand} style={{ background: 'none', border: 'none', color: '#CACD2D', cursor: 'pointer' }}>
+                Leer más
+              </button>
+            )}
+          </div>
+          <a href="/privacity-page" className={`${styles.flexLeft} text-[18px]`} style={{ color: "black", textDecoration: "underline" }}>Política de privacidad</a>
+        </CookieConsent>
+
       <img src={logoElement2} alt='logoElement' onClick={redirectHome} className='w-[120px] h-[85px] flex flex-start ' />
       <ul className='list-none sm:flex hidden justify-end items-center flex-1'>
       {navLinks.map((nav, index) => {

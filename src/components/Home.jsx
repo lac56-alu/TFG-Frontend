@@ -6,6 +6,7 @@ import Stats from './Stats'
 import Feedback from './Feedback'
 import CTA from './CTA'
 
+
 function Home() {
   return (
     <div className="bg-primary w-full overflow-hidden">

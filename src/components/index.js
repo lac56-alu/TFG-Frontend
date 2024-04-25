@@ -28,6 +28,7 @@ import FAQ from './FooterPages/FAQ'
 import PrivacityPage from './FooterPages/PrivacityPage'
 import UseConditions from './FooterPages/UseConditions'
 import WorkWithUs from './FooterPages/WorkWithUs'
+import CookieConsent from './CookieConsent'
 
 
 export {
@@ -61,4 +62,5 @@ export {
     PrivacityPage,
     UseConditions,
     WorkWithUs,
+    CookieConsent,
 };

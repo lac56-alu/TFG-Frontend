@@ -38,7 +38,7 @@ export default function FAQ() {
       <div className={`flex flex-col w-full bg-black-gradient-2 
                                 rounded-[20px] box-shadow max-w-[650px]`}>
         <h2 className={`${styles.flexLeft} ${styles.heading4} ml-8 mt-2 max-w-[90%]`}>
-          ❔ ¿Donde se encuentra Element Gym?
+          ❔ ¿Dónde se encuentra Element Gym?
         </h2>
         <p className={` ${styles.paragraph} mt-4 ml-8 mb-8 max-w-[600px]`}>
           Ahora mismo nuestras instalaciones se encuentran en: <br />

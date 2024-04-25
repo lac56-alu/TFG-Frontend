@@ -246,6 +246,9 @@
   }
 }
 
+.textBlack {
+  color: black;
+}
 
 .textGold {
   color: goldenrod;
@@ -459,6 +462,7 @@
 .fc-time-grid-event {
   height: auto !important;
 }
+
 
 
 
