@@ -18,6 +18,11 @@ import PadelBookingAdmin from '../components/Admin/PadelBookingAdmin'
 import Schedule from '../components/Schedule/Schedule'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import AccessPlatform from '../components/FooterPages/AccessPlatform'
+import FAQ from '../components/FooterPages/FAQ'
+import PrivacityPage from '../components/FooterPages/PrivacityPage'
+import UseConditions from '../components/FooterPages/UseConditions'
+import WorkWithUs from '../components/FooterPages/WorkWithUs'
 
 
 function AppRouter (){
@@ -139,6 +144,12 @@ function AppRouter (){
         }
       />
       <Route path='/schedule' element={ <Schedule /> } />
+
+      <Route path='/access-platform' element={ <AccessPlatform /> } />
+      <Route path='/faq' element={ <FAQ /> } />
+      <Route path='/privacity-page' element={ <PrivacityPage /> } />
+      <Route path='/use-conditions' element={ <UseConditions /> } />
+      <Route path='/work-with-us' element={ <WorkWithUs /> } />
 
       <Route path='/*' element={ <Navigate to="/"/> } />
     </Routes>
