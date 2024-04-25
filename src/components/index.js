@@ -24,7 +24,6 @@ import UserHistoricalPadelBookings from './Booking/UserHistoricalPadelBookings'
 import PadelBookingAdmin from './Admin/PadelBookingAdmin'
 import Schedule from './Schedule/Schedule'
 import AccessPlatform from './FooterPages/AccessPlatform'
-import ColaboPage from './FooterPages/ColaboPage'
 import FAQ from './FooterPages/FAQ'
 import PrivacityPage from './FooterPages/PrivacityPage'
 import UseConditions from './FooterPages/UseConditions'
@@ -58,7 +57,6 @@ export {
     PadelBookingAdmin,
     Schedule,
     AccessPlatform,
-    ColaboPage,
     FAQ,
     PrivacityPage,
     UseConditions,

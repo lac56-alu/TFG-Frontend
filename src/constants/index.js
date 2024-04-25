@@ -95,11 +95,11 @@ export const footerLinks = [
     links: [
       {
         name: "Aceso a la plataforma",
-        link: "/access-platform",
+        url: "/access-platform",
       },
       {
         name: "Preguntas Frecuentes FAQ",
-        link: "/faq",
+        url: "/faq",
       },
     ],
   },
@@ -107,20 +107,16 @@ export const footerLinks = [
     title: "Sobre nosotros",
     links: [
       {
-        name: "Colaboraciones",
-        link: "/colabo-page",
-      },
-      {
         name: "Trabajar en Element",
-        link: "/work-with-us",
+        url: "/work-with-us",
       },
       {
-        name: "Política de privacidad",
-        link: "/privacity-pag",
+        name: "Protección de datos",
+        url: "/privacity-page",
       },
       {
         name: "Condiciones de uso",
-        link: "/use-condition",
+        url: "/use-conditions",
       }
     ],
   },
@@ -129,27 +125,27 @@ export const footerLinks = [
     links: [
       {
         name: "Instagram",
-        link: "http://www.instagram.com/",
+        url: "http://www.instagram.com/",
         external: true,
       },
       {
         name: "Twitter",
-        link: "https://www.twitter.com",
+        url: "https://www.twitter.com",
         external: true,
       },
       {
         name: "Facebook",
-        link: "https://www.facebook.com",
+        url: "https://www.facebook.com",
         external: true,
       },
       {
         name: "Pinterest",
-        link: "https://www.pinterest.com",
+        url: "https://www.pinterest.com",
         external: true,
       },
       {
         name: "Linkedin",
-        link: "https://www.linkedin.com",
+        url: "https://www.linkedin.com",
         external: true,
       },
     ],
@@ -161,22 +157,22 @@ export const socialMedia = [
   {
     id: "social-media-1",
     icon: instagram,
-    link: "https://www.instagram.com/",
+    url: "https://www.instagram.com/",
   },
   {
     id: "social-media-2",
     icon: twitter,
-    link: "https://www.twitter.com/",
+    url: "https://www.twitter.com/",
   },
   {
     id: "social-media-3",
     icon: facebook,
-    link: "https://www.facebook.com/",
+    url: "https://www.facebook.com/",
   },
   {
     id: "social-media-4",
     icon: linkedin,
-    link: "https://www.linkedin.com/",
+    url: "https://www.linkedin.com/",
   },
 ];
 

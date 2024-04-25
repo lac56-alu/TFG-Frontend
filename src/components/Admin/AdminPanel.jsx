@@ -23,7 +23,7 @@ function AdminPanel() {
     }
 
     const redirectScheduleAdmin = () =>{
-        window.location.href = '/rates'; 
+        window.location.href = '/schedule'; 
     }
   return (
     <div className="bg-primary w-full overflow-hidden">

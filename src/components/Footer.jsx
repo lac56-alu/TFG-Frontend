@@ -3,7 +3,10 @@ import { logoElement2 } from '../assets'
 import { footerLinks, socialMedia } from '../constants'
 import { Link } from 'react-router-dom';
 
-
+const redirectToFooter = (url) => {
+  console.log(url)
+  window.location.href = url;
+}
 
 const Footer = () => (
   <section className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
@@ -21,7 +24,7 @@ const Footer = () => (
                   {link.external ? (
                     <Link to={link.url} target="_blank" rel="noopener noreferrer">{link.name}</Link>
                   ) : (
-                    <span>{link.name}</span>
+                    <a href={link.url}>{link.name}</a>
                   )}
                 </li>
               ))}
